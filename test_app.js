@@ -57,8 +57,8 @@ greekVarieties.forEach(v => {
 console.log(`✓ wineVarieties contains ${greekVarieties.length} flagship profiles (${greekCount} Greek, ${intlCount} International).`);
 
 // Test 5: Sommelier Certification Quiz
-if (!Array.isArray(quizQuestions) || quizQuestions.length < 10) {
-  throw new Error('quizQuestions is incomplete');
+if (!Array.isArray(quizQuestions) || quizQuestions.length < 50) {
+  throw new Error(`quizQuestions is incomplete: expected at least 50 questions, found ${quizQuestions?.length}`);
 }
 quizQuestions.forEach((q, idx) => {
   if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {

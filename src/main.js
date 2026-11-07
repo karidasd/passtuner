@@ -626,15 +626,17 @@ function setupQuiz() {
   }
 
   function renderFinalScore() {
+    const total = quizQuestions.length;
+    const pct = Math.round((userScore / total) * 100);
     let rankBadge = "";
-    if (userScore === 10) {
-      rankBadge = "🏆 Master Sommelier / Executive Chef (Άριστα 100%)";
-    } else if (userScore >= 8) {
-      rankBadge = "⭐ Senior Sommelier / Chef de Partie (Εξαιρετική Επίδοση)";
-    } else if (userScore >= 6) {
-      rankBadge = "🍷 Commis Sommelier / Σπουδαστής ΣΑΕΚ (Βάση Πιστοποίησης)";
+    if (pct >= 90) {
+      rankBadge = `🏆 Master Sommelier / Executive Chef (Άριστα ${pct}%)`;
+    } else if (pct >= 75) {
+      rankBadge = `⭐ Senior Sommelier / Chef de Partie (Εξαιρετική Επίδοση ${pct}%)`;
+    } else if (pct >= 60) {
+      rankBadge = `🍷 Commis Sommelier / Σπουδαστής ΣΑΕΚ (Βάση Πιστοποίησης ${pct}%)`;
     } else {
-      rankBadge = "📖 Χρειάζεται Επανάληψη του Συγγράμματος";
+      rankBadge = `📖 Χρειάζεται Επανάληψη του Συγγράμματος (${pct}%)`;
     }
 
     quizWrapper.innerHTML = `
