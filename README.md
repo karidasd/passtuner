@@ -1,17 +1,38 @@
 # PassTuner 🍷🍽️
 ### The Executive Chef & Sommelier Food & Wine Pairing Engine
-**Συγγραφέας & Επιστημονική Επιμέλεια:** **Καρύδας Δημήτριος, Οινολόγος**  
+**Συγγραφέας & Επιστημονική Επιμέλεια:** **[Καρύδας Δημήτριος, Οινολόγος](https://github.com/karidasd)**  
 *Επίσημο Εκπαιδευτικό Σύστημα ΣΑΕΚ / ΙΕΚ Μαγειρικής Τέχνης (Chef) & Οινοχοΐας*
 
 ---
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Built with Vite](https://img.shields.io/badge/built%20with-Vite-646CFF.svg)](https://vitejs.dev/)
-[![Live Demo](https://img.shields.io/badge/demo-GitHub%20Pages-success.svg)](https://karidasd.github.io/passtuner)
+<p align="center">
+  <img src="public/images/hero_pairing_ai.jpg" alt="PassTuner Fine Dining Food & Wine Pairing AI Scene" width="100%" style="border-radius: 12px; box-shadow: 0 12px 36px rgba(74, 15, 24, 0.25);">
+</p>
 
-**PassTuner** είναι μια σύγχρονη, ταχύτατη εφαρμογή Food & Wine Pairing σχεδιασμένη ειδικά για τον επαγγελματία Executive Chef και Sommelier κατά τη διάρκεια του service στο πάσο (The Pass).
+<p align="center">
+  <a href="https://karidasd.github.io/passtuner"><img src="https://img.shields.io/badge/🚀%20Live%20App-GitHub%20Pages-success.svg?style=for-the-badge" alt="Live App"></a>
+  <a href="public/docs/BOOK_FOOD_AND_WINE_PAIRING_MASTER_EDITION.pdf"><img src="https://img.shields.io/badge/📖%20Βιβλίο-PDF%20164%20Σελίδες-800020.svg?style=for-the-badge" alt="Book PDF"></a>
+  <a href="public/docs/PRESENTATION_1_FOOD_AND_WINE_PAIRING_THEORY_AND_INGREDIENTS.pdf"><img src="https://img.shields.io/badge/🖥️%20Διάλεξη%201-60%20Slides%20PDF-C5A059.svg?style=for-the-badge" alt="Presentation 1"></a>
+  <a href="public/docs/PRESENTATION_2_FOOD_AND_WINE_PAIRING_ADVANCED_PRACTICE_AND_WORLD_CUISINES.pdf"><img src="https://img.shields.io/badge/🌍%20Διάλεξη%202-60%20Slides%20PDF-C5A059.svg?style=for-the-badge" alt="Presentation 2"></a>
+</p>
 
-Βασίζεται στον ομώνυμο εγκυκλοπαιδικό τόμο 164 σελίδων **«ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ»** και περιλαμβάνει πλήρη βιοχημική τεκμηρίωση για την αποφυγή γευστικών συγκρούσεων και τη βαθμονόμηση του πιάτου σε πραγματικό χρόνο.
+---
+
+**PassTuner** είναι μια σύγχρονη, ταχύτατη διαδικτυακή εφαρμογή Food & Wine Pairing σχεδιασμένη ειδικά για τον επαγγελματία Executive Chef και Sommelier κατά τη διάρκεια του service στο πάσο (The Pass).
+
+Βασίζεται στον ομώνυμο εγκυκλοπαιδικό τόμο 164 σελίδων **«ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ»** του Οινολόγου Δημητρίου Καρύδα και περιλαμβάνει πλήρη βιοχημική τεκμηρίωση για την αποφυγή γευστικών συγκρούσεων και τη βαθμονόμηση του πιάτου σε πραγματικό χρόνο.
+
+---
+
+## 📚 Το Επίσημο Βιβλίο & Ακαδημαϊκό Υλικό (Direct Download Links)
+
+| Εκπαιδευτικό Υλικό | Μορφή & Μέγεθος | Περιγραφή | Σύνδεσμος Λήψης |
+| :--- | :--- | :--- | :--- |
+| **ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ** *(Master Edition)* | 📕 PDF (164 Σελίδες, 5.98 MB) | Το πλήρες εγχειρίδιο του μαθήματος: 37 κεφάλαια, 27 gourmet συνταγές, 15 σενάρια πάσου και βιοχημεία. | [📥 Άμεση Λήψη Βιβλίου (PDF)](public/docs/BOOK_FOOD_AND_WINE_PAIRING_MASTER_EDITION.pdf) |
+| **Διάλεξη 1: Θεωρία & Βασικά Υλικά** | 🖥️ PDF (60 Slides Widescreen, 1.0 MB) | Αρχές γευσιγνωσίας, βιοχημεία 5 γεύσεων, θερμοκρασίες, σάλτσες, τυριά και θαλασσινά. | [📥 Λήψη Παρουσίασης 1 (PDF)](public/docs/PRESENTATION_1_FOOD_AND_WINE_PAIRING_THEORY_AND_INGREDIENTS.pdf) |
+| **Διάλεξη 2: Προχωρημένη Πράξη & Διεθνείς Κουζίνες** | 🌍 PDF (60 Slides Widescreen, 0.99 MB) | Κυνήγι, Dry-Aging, Ethnic (Ιαπωνία, Ταϊλάνδη, Μεξικό), Degustation σχεδιασμός & Pass Management. | [📥 Λήψη Παρουσίασης 2 (PDF)](public/docs/PRESENTATION_2_FOOD_AND_WINE_PAIRING_ADVANCED_PRACTICE_AND_WORLD_CUISINES.pdf) |
+
+> 💡 *Μπορείτε επίσης να ανοίξετε και να κατεβάσετε το βιβλίο απευθείας μέσα από τη λειτουργία **«📖 Σχετικά»** της ζωντανής εφαρμογής.*
 
 ---
 
@@ -23,6 +44,7 @@
   * **Γευστική Πρόκληση:** (π.χ. ιώδιο, κολλαγόνο, κιναρίνη, καψαϊκίνη).
   * **Οινικός Εχθρός:** Ποιο στυλ κρασιού απαγορεύεται και γιατί θα καταρρεύσει.
   * **👨‍🍳 Chef's Calibration Note:** Άμεση παρέμβαση στο πάσο (π.χ. προσθήκη ανθού αλατιού, monter au beurre, έλεγχος οξύτητας).
+  * **🔬 Χημεία Αρμονίας (Sommelier Science):** Αναλυτική μοριακή εξήγηση με 1 κλικ.
   * **🏆 Winning Pairing:** Το ιδανικό κρασί (ΠΟΠ/ΠΓΕ).
 
 ### 2. 🚨 Emergency Palate Rescue
