@@ -638,7 +638,7 @@ function setupQuiz() {
         <div class="quiz-final-score">${userScore} / ${quizQuestions.length}</div>
         <div class="quiz-rank-badge">${rankBadge}</div>
         <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem auto; font-size: 0.95rem;">
-          Το τεστ βασίζεται στο επίσημο σύγγραμμα <strong>«ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ»</strong> του Οινολόγου Δημητρίου Καρύδα.
+          Το τεστ βασίζεται στο σύγγραμμα <strong>«ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ»</strong> του Οινολόγου Δημητρίου Καρύδα.
         </p>
         <button class="btn-restart-quiz" id="btn-restart-quiz">🔄 Επανάληψη Κουίζ</button>
       </div>

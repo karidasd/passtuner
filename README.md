@@ -1,7 +1,7 @@
 # PassTuner 🍷🍽️
 ### The Executive Chef & Sommelier Food & Wine Pairing Engine
 **Συγγραφέας & Επιστημονική Επιμέλεια:** **[Καρύδας Δημήτριος, Οινολόγος](https://github.com/karidasd)**  
-*Επίσημο Εκπαιδευτικό Σύστημα ΣΑΕΚ / ΙΕΚ Μαγειρικής Τέχνης (Chef) & Οινοχοΐας*
+*Συμπληρωματικός Οδηγός Μαγειρικής Τέχνης (Chef) & Οινοχοΐας ΣΑΕΚ / ΙΕΚ*
 
 ---
 
@@ -24,11 +24,11 @@
 
 ---
 
-## 📚 Το Επίσημο Βιβλίο & Ακαδημαϊκό Υλικό (Direct Download Links)
+## 📚 Το Βιβλίο & Ακαδημαϊκό Υλικό (Direct Download Links)
 
 | Εκπαιδευτικό Υλικό | Μορφή & Μέγεθος | Περιγραφή | Σύνδεσμος Λήψης |
 | :--- | :--- | :--- | :--- |
-| **ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ** *(Master Edition)* | 📕 PDF (164 Σελίδες, 5.98 MB) | Το πλήρες εγχειρίδιο του μαθήματος: 37 κεφάλαια, 27 gourmet συνταγές, 15 σενάρια πάσου και βιοχημεία. | [📥 Άμεση Λήψη Βιβλίου (PDF)](public/docs/BOOK_FOOD_AND_WINE_PAIRING_MASTER_EDITION.pdf) |
+| **ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ** *(Master Edition)* | 📕 PDF (164 Σελίδες, 5.98 MB) | Το εγχειρίδιο του μαθήματος: 37 κεφάλαια, 27 gourmet συνταγές, 15 σενάρια πάσου και βιοχημεία. | [📥 Άμεση Λήψη Βιβλίου (PDF)](public/docs/BOOK_FOOD_AND_WINE_PAIRING_MASTER_EDITION.pdf) |
 | **Διάλεξη 1: Θεωρία & Βασικά Υλικά** | 🖥️ PDF (60 Slides Widescreen, 1.0 MB) | Αρχές γευσιγνωσίας, βιοχημεία 5 γεύσεων, θερμοκρασίες, σάλτσες, τυριά και θαλασσινά. | [📥 Λήψη Παρουσίασης 1 (PDF)](public/docs/PRESENTATION_1_FOOD_AND_WINE_PAIRING_THEORY_AND_INGREDIENTS.pdf) |
 | **Διάλεξη 2: Προχωρημένη Πράξη & Διεθνείς Κουζίνες** | 🌍 PDF (60 Slides Widescreen, 0.99 MB) | Κυνήγι, Dry-Aging, Ethnic (Ιαπωνία, Ταϊλάνδη, Μεξικό), Degustation σχεδιασμός & Pass Management. | [📥 Λήψη Παρουσίασης 2 (PDF)](public/docs/PRESENTATION_2_FOOD_AND_WINE_PAIRING_ADVANCED_PRACTICE_AND_WORLD_CUISINES.pdf) |
 
