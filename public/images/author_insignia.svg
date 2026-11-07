@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="burgundyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A0F18" />
+      <stop offset="50%" stop-color="#320A10" />
+      <stop offset="100%" stop-color="#1A0407" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EED59B" />
+      <stop offset="50%" stop-color="#C5A059" />
+      <stop offset="100%" stop-color="#9A7736" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Outer Ring -->
+  <circle cx="100" cy="100" r="94" fill="url(#burgundyGrad)" stroke="url(#goldGrad)" stroke-width="4" filter="url(#shadow)" />
+  <circle cx="100" cy="100" r="86" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.8" />
+
+  <!-- Decorative Laurel / Vine Leaves (Left & Right) -->
+  <g fill="url(#goldGrad)" opacity="0.75">
+    <!-- Left wreath -->
+    <path d="M 38 100 C 35 80 48 60 62 48 C 58 58 56 70 58 82 C 48 85 40 92 38 100 Z" />
+    <path d="M 38 105 C 36 125 48 145 62 155 C 57 145 56 132 58 120 C 48 118 40 112 38 105 Z" />
+    <!-- Right wreath -->
+    <path d="M 162 100 C 165 80 152 60 138 48 C 142 58 144 70 142 82 C 152 85 160 92 162 100 Z" />
+    <path d="M 162 105 C 164 125 152 145 138 155 C 143 145 144 132 142 120 C 152 118 160 112 162 105 Z" />
+  </g>
+
+  <!-- Central Emblem: Wine Glass & Chef Cap Integration -->
+  <g transform="translate(100, 94)">
+    <!-- Wine Glass Bowl -->
+    <path d="M -22 -20 C -22 15 22 15 22 -20 Z" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" />
+    <!-- Wine Liquid in Glass -->
+    <path d="M -18 -8 C -10 -2 10 -2 18 -8 C 16 8 -16 8 -18 -8 Z" fill="#800020" />
+    <!-- Stem -->
+    <line x1="0" y1="15" x2="0" y2="40" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" />
+    <!-- Base -->
+    <line x1="-18" y1="40" x2="18" y2="40" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round" />
+    
+    <!-- Stars for Master Sommelier / Educator -->
+    <polygon points="0,-32 3,-24 11,-24 5,-19 7,-11 0,-15 -7,-11 -5,-19 -11,-24 -3,-24" fill="url(#goldGrad)" />
+    <polygon points="-28,-36 -26,-30 -20,-30 -24,-26 -22,-20 -28,-23 -34,-20 -32,-26 -36,-30 -30,-30" fill="url(#goldGrad)" transform="scale(0.65) translate(-14,-14)" />
+    <polygon points="28,-36 30,-30 36,-30 32,-26 34,-20 28,-23 22,-20 24,-26 20,-30 26,-30" fill="url(#goldGrad)" transform="scale(0.65) translate(14,-14)" />
+  </g>
+
+  <!-- Circular Text -->
+  <path id="textCircleTop" d="M 30,100 A 70,70 0 0,1 170,100" fill="none" />
+  <text font-family="'Cinzel', serif" font-size="9.5" font-weight="700" fill="url(#goldGrad)" letter-spacing="2">
+    <textPath href="#textCircleTop" startOffset="50%" text-anchor="middle">
+      ΚΑΡΥΔΑΣ ΔΗΜΗΤΡΙΟΣ
+    </textPath>
+  </text>
+
+  <path id="textCircleBottom" d="M 170,105 A 70,70 0 0,1 30,105" fill="none" />
+  <text font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#E0D6CE" letter-spacing="2">
+    <textPath href="#textCircleBottom" startOffset="50%" text-anchor="middle">
+      ΟΙΝΟΛΟΓΟΣ • ΣΑΕΚ / ΙΕΚ
+    </textPath>
+  </text>
+</svg>

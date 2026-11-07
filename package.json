@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "The Executive Chef & Sommelier Food and Wine Pairing Engine",
   "homepage": "https://karidasd.github.io/passtuner",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node test_app.js"
   },
   "keywords": [
     "food-and-wine-pairing",

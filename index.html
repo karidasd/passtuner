@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PassTuner | The Chef & Sommelier Pairing Engine</title>
   <meta name="description" content="Η απόλυτη μηχανή Food and Wine Pairing για Executive Chefs και Sommeliers. Βασισμένο στο επίσημο σύγγραμμα του Οινολόγου Δημητρίου Καρύδα.">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -32,6 +33,9 @@
           </button>
           <button class="nav-btn" data-tab="interactions">
             <span class="icon">🧬</span> 5 Tastes Matrix
+          </button>
+          <button class="nav-btn" data-tab="infographics">
+            <span class="icon">📊</span> Οπτικοί Οδηγοί
           </button>
           <button class="nav-btn" data-tab="about">
             <span class="icon">📖</span> Σχετικά
@@ -106,6 +110,46 @@
         </div>
       </section>
 
+      <!-- TAB 3B: INFOGRAPHICS & VISUAL GUIDES -->
+      <section id="tab-infographics" class="tab-pane">
+        <div class="section-hero">
+          <h2>📊 Επιστημονικοί Οπτικοί Οδηγοί & Διαγράμματα</h2>
+          <p>Εικονογραφημένες καμπύλες θερμοκρασίας, ψησίματος και βιοχημείας από το εγχειρίδιο του μαθήματος.</p>
+        </div>
+
+        <div class="infographics-grid">
+          <div class="infographic-card">
+            <div class="info-card-header">
+              <h3>1. Βιοχημικός Πίνακας Αλληλεπιδράσεων (5 Tastes Matrix)</h3>
+              <p>Η επίδραση του άλατος, της οξύτητας, του umami, της ζάχαρης και του τσίλι στις τανίνες και στο φρούτο.</p>
+            </div>
+            <div class="info-card-img-wrap">
+              <img src="./images/interaction_matrix.png" alt="Interaction Matrix" class="infographic-img">
+            </div>
+          </div>
+
+          <div class="infographic-card">
+            <div class="info-card-header">
+              <h3>2. Θερμοκρασίες Ψησίματος Κρέατος & Δέσμευση Τανινών</h3>
+              <p>Σύγκριση ελεύθερων σαρκοπλασματικών πρωτεϊνών (% προστασίας σάλιου) vs στυπτικότητας τανινών από Rare έως Well-Done.</p>
+            </div>
+            <div class="info-card-img-wrap">
+              <img src="./images/meat_doneness.png" alt="Meat Doneness and Tannins" class="infographic-img">
+            </div>
+          </div>
+
+          <div class="infographic-card">
+            <div class="info-card-header">
+              <h3>3. Master Sommelier Οδηγός Θερμοκρασιών Σερβιρίσματος</h3>
+              <p>Από τους 6°C έως τους 18°C: Αφρώδη, τραγανά λευκά, βαρελάτα, ελαφριά ερυθρά και στιβαρά παλαιωμένα κρασιά.</p>
+            </div>
+            <div class="info-card-img-wrap">
+              <img src="./images/temperature_guide.png" alt="Temperature Guide" class="infographic-img">
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- TAB 4: ABOUT & AUTHOR -->
       <section id="tab-about" class="tab-pane">
         <div class="about-card">
@@ -116,7 +160,9 @@
           </div>
 
           <div class="author-profile">
-            <div class="author-avatar">🍷</div>
+            <div class="author-avatar">
+              <img src="./images/author_insignia.svg" alt="Καρύδας Δημήτριος Οικόσημο" class="author-insignia-img">
+            </div>
             <div class="author-info">
               <h4>Καρύδας Δημήτριος</h4>
               <p class="author-title">Οινολόγος — Εκπαιδευτής ΣΑΕΚ / ΙΕΚ</p>
@@ -158,6 +204,15 @@
       </section>
 
     </main>
+
+    <!-- Image Modal Lightbox -->
+    <div id="image-modal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-content">
+        <button id="modal-close" class="modal-close-btn" aria-label="Κλείσιμο">&times;</button>
+        <img id="modal-img" src="" alt="Infographic Preview">
+        <p id="modal-caption" class="modal-caption"></p>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="app-footer">

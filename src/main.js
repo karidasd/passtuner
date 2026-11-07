@@ -85,7 +85,14 @@ function renderMatrixCards() {
           <strong>👨‍🍳 Chef's Calibration:</strong> ${item.calibration}
         </div>
 
-        <div class="info-row" style="margin-top: auto;">
+        ${item.chemistry ? `
+        <details class="chemistry-details">
+          <summary>🔬 Χημεία Αρμονίας (Sommelier Rationale)</summary>
+          <p class="chemistry-content">${item.chemistry}</p>
+        </details>
+        ` : ''}
+
+        <div class="info-row" style="margin-top: auto; padding-top: 0.5rem;">
           <span class="info-label label-winning">🏆 Winning Pairing</span>
           <div class="wine-badge">
             ${item.winningWine}
@@ -136,9 +143,53 @@ function renderTastesTable() {
   `).join('');
 }
 
+// Lightbox Modal Logic
+function setupLightboxModal() {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalCaption = document.getElementById('modal-caption');
+  const modalClose = document.getElementById('modal-close');
+
+  if (!modal || !modalImg || !modalClose) return;
+
+  // Open modal on image click
+  document.querySelectorAll('.info-card-img-wrap').forEach(wrap => {
+    wrap.addEventListener('click', () => {
+      const img = wrap.querySelector('.infographic-img');
+      const headerTitle = wrap.closest('.infographic-card')?.querySelector('h3')?.textContent || '';
+      if (img) {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+        modalCaption.textContent = headerTitle;
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  // Close modal
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    modalImg.src = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+}
+
 // Initial Boot
 document.addEventListener('DOMContentLoaded', () => {
   renderMatrixCards();
   renderEmergency();
   renderTastesTable();
+  setupLightboxModal();
 });
