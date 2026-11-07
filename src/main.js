@@ -470,6 +470,8 @@ function setupGreekVarieties() {
   function renderVarieties() {
     const filtered = greekVarieties.filter(v => {
       if (activeVarietyFilter === 'all') return true;
+      if (activeVarietyFilter === 'greek') return v.origin === 'greek';
+      if (activeVarietyFilter === 'international') return v.origin === 'international';
       return v.type === activeVarietyFilter;
     });
 
@@ -477,6 +479,11 @@ function setupGreekVarieties() {
       <article class="variety-card">
         <div class="variety-card-header">
           <div>
+            <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+              <span style="font-size: 0.72rem; font-weight: 800; padding: 0.15rem 0.45rem; border-radius: 4px; background: #FAF7F2; border: 1px solid var(--border-color); color: var(--wine-accent);">
+                ${v.origin === 'greek' ? '🇬🇷 ΓΗΓΕΝΗΣ' : '🌍 ΔΙΕΘΝΗΣ'}
+              </span>
+            </div>
             <h3 class="variety-name">${v.name}</h3>
             <span class="variety-region">📍 ${v.region}</span>
           </div>

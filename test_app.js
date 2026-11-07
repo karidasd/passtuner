@@ -37,19 +37,24 @@ if (!Array.isArray(tasteInteractions) || tasteInteractions.length < 5) {
 }
 console.log(`✓ tasteInteractions contains ${tasteInteractions.length} biochemical taste profiles.`);
 
-// Test 4: Greek Indigenous Varieties
-if (!Array.isArray(greekVarieties) || greekVarieties.length < 8) {
-  throw new Error('greekVarieties is incomplete');
+// Test 4: Grape Varieties Atlas (Greek & International)
+if (!Array.isArray(greekVarieties) || greekVarieties.length < 16) {
+  throw new Error(`wineVarieties contains only ${greekVarieties?.length || 0}, expected at least 16`);
+}
+const greekCount = greekVarieties.filter(v => v.origin === 'greek').length;
+const intlCount = greekVarieties.filter(v => v.origin === 'international').length;
+if (greekCount < 8 || intlCount < 8) {
+  throw new Error(`Expected at least 8 Greek and 8 International varieties. Got ${greekCount} Greek and ${intlCount} International.`);
 }
 greekVarieties.forEach(v => {
-  if (!v.id || !v.name || !v.region || !v.type || !v.bestPairings || !v.worstPairings) {
-    throw new Error(`Greek variety ${v.name || 'unknown'} has missing properties`);
+  if (!v.id || !v.name || !v.region || !v.type || !v.bestPairings || !v.worstPairings || !v.origin) {
+    throw new Error(`Wine variety ${v.name || 'unknown'} has missing properties`);
   }
   if (typeof v.acidity !== 'number' || typeof v.tannins !== 'number' || typeof v.body !== 'number') {
-    throw new Error(`Greek variety ${v.name} has invalid sensory scores`);
+    throw new Error(`Wine variety ${v.name} has invalid sensory scores`);
   }
 });
-console.log(`✓ greekVarieties contains ${greekVarieties.length} flagship Greek grape profiles.`);
+console.log(`✓ wineVarieties contains ${greekVarieties.length} flagship profiles (${greekCount} Greek, ${intlCount} International).`);
 
 // Test 5: Sommelier Certification Quiz
 if (!Array.isArray(quizQuestions) || quizQuestions.length < 10) {

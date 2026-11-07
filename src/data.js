@@ -376,6 +376,7 @@ export const greekVarieties = [
     id: "assyrtiko",
     name: "Ασύρτικο (Assyrtiko)",
     region: "Σαντορίνη ΠΟΠ & Ηπειρωτική Ελλάδα",
+    origin: "greek",
     type: "white",
     colorLabel: "Λευκός Οίνος",
     acidity: 5,
@@ -398,6 +399,7 @@ export const greekVarieties = [
     id: "xinomavro",
     name: "Ξινόμαυρο (Xinomavro)",
     region: "Νάουσα ΠΟΠ, Αμύνταιο ΠΟΠ, Γουμένισσα ΠΟΠ",
+    origin: "greek",
     type: "red",
     colorLabel: "Ερυθρός Οίνος",
     acidity: 5,
@@ -420,6 +422,7 @@ export const greekVarieties = [
     id: "agiorgitiko",
     name: "Αγιωργίτικο (Agiorgitiko)",
     region: "Νεμέα ΠΟΠ",
+    origin: "greek",
     type: "red",
     colorLabel: "Ερυθρός Οίνος",
     acidity: 3,
@@ -442,6 +445,7 @@ export const greekVarieties = [
     id: "moschofilero",
     name: "Μοσχοφίλερο (Moschofilero)",
     region: "Μαντινεία ΠΟΠ",
+    origin: "greek",
     type: "white",
     colorLabel: "Λευκός Αρωματικός Οίνος",
     acidity: 4.5,
@@ -464,6 +468,7 @@ export const greekVarieties = [
     id: "vidiano",
     name: "Βιδιανό (Vidiano)",
     region: "Κρήτη (Ηράκλειο, Ρέθυμνο)",
+    origin: "greek",
     type: "white",
     colorLabel: "Λευκός Γαστρονομικός Οίνος",
     acidity: 3.5,
@@ -486,6 +491,7 @@ export const greekVarieties = [
     id: "robola",
     name: "Ρομπόλα (Robola)",
     region: "Κεφαλληνία ΠΟΠ",
+    origin: "greek",
     type: "white",
     colorLabel: "Λευκός Οίνος",
     acidity: 4.5,
@@ -508,6 +514,7 @@ export const greekVarieties = [
     id: "mavrotragano",
     name: "Μαυροτράγανο (Mavrotragano)",
     region: "Σαντορίνη & Κυκλάδες",
+    origin: "greek",
     type: "red",
     colorLabel: "Ερυθρός Σπάνιος Οίνος",
     acidity: 4,
@@ -530,6 +537,7 @@ export const greekVarieties = [
     id: "savatiano",
     name: "Σαββατιανό Παλαιών Κλημάτων (Savatiano)",
     region: "Αττική & Κεντρική Ελλάδα",
+    origin: "greek",
     type: "white",
     colorLabel: "Λευκός Οίνος",
     acidity: 3,
@@ -546,6 +554,191 @@ export const greekVarieties = [
     worstPairings: [
       "Αγριογούρουνο στιφάδο",
       "Επιδόρπια με υψηλή ζάχαρη"
+    ]
+  },
+  // --- ΔΙΕΘΝΕΙΣ / ΞΕΝΕΣ ΠΟΙΚΙΛΙΕΣ (INTERNATIONAL FLAGSHIP VARIETIES) ---
+  {
+    id: "cabernet_sauvignon",
+    name: "Cabernet Sauvignon",
+    region: "Bordeaux (Left Bank), Napa Valley, Bolgheri",
+    origin: "international",
+    type: "red",
+    colorLabel: "Ερυθρός Διεθνής Οίνος",
+    acidity: 4,
+    tannins: 5,
+    body: 5,
+    alcohol: 4.5,
+    aromas: "Φραγκοστάφυλο (cassis), κέδρος, γραφίτης, πράσινη πιπεριά, καπνός, βανίλια δρυός.",
+    profileText: "Ο αδιαμφισβήτητος βασιλιάς των ερυθρών ποικιλιών παγκοσμίως. Στιβαρή τανική δομή, βαθύ χρώμα και έντονη ανάγκη για πλούσια πρωτεΐνη και ενδομυϊκό λίπος.",
+    bestPairings: [
+      "Prime Ribeye Steak Black Angus στη σχάρα",
+      "Αρνίσια παϊδάκια σχάρας με δεντρολίβανο",
+      "Παλαιωμένο Cheddar / Comté 24 μηνών"
+    ],
+    worstPairings: [
+      "Στρείδια και ωμά θαλασσινά (μεταλλική καταστροφή)",
+      "Ελαφριά λευκά ψάρια ποσέ"
+    ]
+  },
+  {
+    id: "pinot_noir",
+    name: "Pinot Noir",
+    region: "Burgundy (Côte de Nuits), Oregon, Central Otago",
+    origin: "international",
+    type: "red",
+    colorLabel: "Ερυθρός Κομψός Οίνος",
+    acidity: 4.5,
+    tannins: 2.5,
+    body: 3,
+    alcohol: 3.5,
+    aromas: "Άγριο κεράσι, σμέουρο, κόκκινα μούρα, φύλλα δάσους, υγρή γη, μανιτάρια, τρούφα.",
+    profileText: "Η επιτομή της φινέτσας. Μεταξένιες τανίνες, διαυγές ρουμπινί χρώμα και κομψή οξύτητα. Η κλασική γέφυρα ερυθρού κρασιού με λιπαρά ψάρια, πάπια και μανιτάρια.",
+    bestPairings: [
+      "Ψητό στήθος πάπιας με σάλτσα κερασιού",
+      "Σολομός σχάρας με γλάσο Teriyaki",
+      "Ριζότο με φρέσκια μαύρη τρούφα & morilles"
+    ],
+    worstPairings: [
+      "Υπερβολικά καυτερά πιάτα με τσίλι",
+      "Σκληρά κρέατα με έντονη κάπνα BBQ"
+    ]
+  },
+  {
+    id: "syrah",
+    name: "Syrah / Shiraz",
+    region: "Northern Rhône (Hermitage, Côte-Rôtie), Barossa Valley",
+    origin: "international",
+    type: "red",
+    colorLabel: "Ερυθρός Πικάντικος Οίνος",
+    acidity: 3.5,
+    tannins: 4.5,
+    body: 4.5,
+    alcohol: 4.5,
+    aromas: "Μαύρο πιπέρι (ροτονδόνη), βατόμουρο, καπνός, μπέικον, μαύρη ελιά, λεβάντα, πίσσα.",
+    profileText: "Σκοτεινό, σαρκώδες και μπαχαράτο. Το Syrah διαθέτει μοναδική πιπεράτη ένταση που αγκαλιάζει τα ψητά κρέατα, τα κυνήγια και τις καπνιστές σάλτσες.",
+    bestPairings: [
+      "Φιλέτο ελαφιού / αγριογούρουνο με σπασμένα πιπέρια",
+      "Μοσχαρίσια σπαλομπριζόλα στα κάρβουνα",
+      "Καπνιστό μεδούλι & αρνίσιο κεμπάπ"
+    ],
+    worstPairings: [
+      "Ωμά οστρακοειδή & θαλασσινά",
+      "Ελαφριές πράσινες σαλάτες"
+    ]
+  },
+  {
+    id: "nebbiolo",
+    name: "Nebbiolo (Barolo & Barbaresco)",
+    region: "Piedmont (Langhe, Barolo DOCG, Barbaresco DOCG)",
+    origin: "international",
+    type: "red",
+    colorLabel: "Ερυθρός Αριστοκρατικός Οίνος",
+    acidity: 5,
+    tannins: 5,
+    body: 4,
+    alcohol: 4.5,
+    aromas: "Άνθη πορτοκαλιάς, αποξηραμένα τριαντάφυλλα, πίσσα, δέρμα, βύσσινο, λευκή τρούφα.",
+    profileText: "Ο βασιλιάς του Piemonte. Απατηλά ανοιχτόχρωμο στο ποτήρι, αλλά με τιτάνιες τανίνες και κοφτερή οξύτητα που απαιτούν μακρά παλαίωση και πλούσια κολλαγόνα.",
+    bestPairings: [
+      "Brasato al Barolo (μοσχαρίσιο σιγομαγειρεμένο)",
+      "Tajarin pasta με άφθονη φρέσκια λευκή τρούφα Alba",
+      "Ossobuco alla Milanese"
+    ],
+    worstPairings: [
+      "Θαλασσινά και ψάρια κάθε είδους",
+      "Γλυκά επιδόρπια"
+    ]
+  },
+  {
+    id: "sangiovese",
+    name: "Sangiovese (Chianti & Brunello)",
+    region: "Tuscany (Chianti Classico, Brunello di Montalcino DOCG)",
+    origin: "international",
+    type: "red",
+    colorLabel: "Ερυθρός Οίνος Τοσκάνης",
+    acidity: 4.5,
+    tannins: 4,
+    body: 3.5,
+    alcohol: 4,
+    aromas: "Βύσσινο, αποξηραμένη ρίγανη, φύλλα ντομάτας, καπνός, δέρμα, βαλσαμικό ξίδι.",
+    profileText: "Η καρδιά της Τοσκάνης. Υψηλή οξύτητα και σφιχτές τανίνες με φυσική συγγένεια προς τις σάλτσες ντομάτας, τα ψητά κρέατα της Trattoria και το ελαιόλαδο.",
+    bestPairings: [
+      "Bistecca alla Fiorentina (T-Bone Chianina)",
+      "Παπαρδέλες με πλούσιο ραγού αγριογούρουνου",
+      "Πίτσα Napoletana με San Marzano & μοτσαρέλα di bufala"
+    ],
+    worstPairings: [
+      "Ωμά στρείδια",
+      "Καυτερά πιάτα Σετσουάν"
+    ]
+  },
+  {
+    id: "chardonnay",
+    name: "Chardonnay (Burgundy & New World)",
+    region: "Burgundy (Chablis, Meursault, Puligny), Napa Valley",
+    origin: "international",
+    type: "white",
+    colorLabel: "Λευκός Πολυδιάστατος Οίνος",
+    acidity: 4,
+    tannins: 0,
+    body: 4.5,
+    alcohol: 4,
+    aromas: "Πράσινο μήλο, εσπεριδοειδή (Chablis) ή καβουρδισμένο βούτυρο, φουντούκι, βανίλια, καραμέλα (Meursault).",
+    profileText: "Ο χαμαιλέων του λευκού αμπελώνα. Από την κοφτερή ορυκτότητα του Chablis έως τη βουτυράτη μεγαλοπρέπεια της Côte de Beaune. Απόλυτος σύντροφος της haute cuisine.",
+    bestPairings: [
+      "Αστακός με διαυγασμένο βούτυρο (Beurre Noisette)",
+      "Σφυρίδα με σάλτσα Beurre Blanc & σπαράγγια",
+      "Κοτόπουλο Bresse ψητό με κρέμα και μανιτάρια morilles"
+    ],
+    worstPairings: [
+      "Ωμά στρείδια (για τα πολύ βαρελάτα)",
+      "Καυτερά πιάτα κάρι με έντονο τσίλι"
+    ]
+  },
+  {
+    id: "sauvignon_blanc",
+    name: "Sauvignon Blanc",
+    region: "Loire (Sancerre, Pouilly-Fumé), Marlborough, Bordeaux",
+    origin: "international",
+    type: "white",
+    colorLabel: "Λευκός Αρωματικός Οίνος",
+    acidity: 5,
+    tannins: 0,
+    body: 2.5,
+    alcohol: 3,
+    aromas: "Φρεσκοκομμένο γρασίδι, σπαράγγι, πράσινη πιπεριά, φραγκοστάφυλο, passion fruit, πυριτόλιθος.",
+    profileText: "Ηλεκτρική, τραγανή οξύτητα και εκρηκτικά βοτανικά και τροπικά αρώματα πυραζινών. Ο κατεξοχήν σύμμαχος για κατσικίσια τυριά, πράσινες σαλάτες και ceviche.",
+    bestPairings: [
+      "Κατσικίσιο τυρί Crottin de Chavignol / Chèvre",
+      "Σπαράγγια σοτέ με ξύσμα λάιμ",
+      "Ceviche λαβράκι με κόλιανδρο & yuzu"
+    ],
+    worstPairings: [
+      "Βαριά ερυθρά κρέατα στη σχάρα",
+      "Πλούσιες κρεμώδεις σάλτσες gorgonzola"
+    ]
+  },
+  {
+    id: "riesling",
+    name: "Riesling (Mosel & Alsace)",
+    region: "Mosel, Rheingau, Alsace, Clare Valley",
+    origin: "international",
+    type: "white",
+    colorLabel: "Λευκός Ορυκτός Οίνος",
+    acidity: 5,
+    tannins: 0,
+    body: 3,
+    alcohol: 2.5,
+    aromas: "Λάιμ, πράσινο μήλο, λευκό ροδάκινο, γιασεμί, πετροχημικές νότες κηροζίνης (TDN), σχιστόλιθος.",
+    profileText: "Η ευγενέστερη ποικιλία του πλανήτη κατά τους κορυφαίους sommeliers. Κοφτερή οξύτητα, μηδενικό νέο βαρέλι, ατελείωτη αντοχή στο χρόνο και μοναδική ικανότητα να δαμάζει την καψαϊκίνη.",
+    bestPairings: [
+      "Πικάντικα πιάτα Ταϊλάνδης & Ινδίας (Green Curry, Pad Thai)",
+      "Πάπια Πεκίνου με σάλτσα Hoisin",
+      "Χοιρινή πανσέτα με τραγανή κρούστα & μουστάρδα"
+    ],
+    worstPairings: [
+      "Στιβαρά κρέατα με τανικές σάλτσες jus",
+      "Σοκολατένια επιδόρπια"
     ]
   }
 ];
