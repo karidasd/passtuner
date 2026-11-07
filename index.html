@@ -28,6 +28,15 @@
           <button class="nav-btn active" data-tab="pass-matrix">
             <span class="icon">⚡</span> Pass Matrix
           </button>
+          <button class="nav-btn" data-tab="calculator">
+            <span class="icon">🎛️</span> Υπολογιστής
+          </button>
+          <button class="nav-btn" data-tab="menu-validator">
+            <span class="icon">📋</span> Ροή Μενού
+          </button>
+          <button class="nav-btn" data-tab="greek-varieties">
+            <span class="icon">🇬🇷</span> Ελληνικές Ποικιλίες
+          </button>
           <button class="nav-btn" data-tab="emergency">
             <span class="icon">🚨</span> Emergency Rescue
           </button>
@@ -37,10 +46,19 @@
           <button class="nav-btn" data-tab="infographics">
             <span class="icon">📊</span> Οπτικοί Οδηγοί
           </button>
+          <button class="nav-btn" data-tab="quiz">
+            <span class="icon">🎓</span> Quiz Σπουδαστών
+          </button>
           <button class="nav-btn" data-tab="about">
-            <span class="icon">📖</span> Σχετικά
+            <span class="icon">📖</span> Σχετικά & Βιβλίο
           </button>
         </nav>
+
+        <div class="header-actions">
+          <button id="btn-print-sheet" class="btn-print-action" title="Εκτύπωση Οδηγού Πάσου A4">
+            <span class="icon">🖨️</span> Εκτύπωση Pass Sheet
+          </button>
+        </div>
       </div>
     </header>
 
@@ -68,6 +86,136 @@
         </div>
 
         <div class="cards-grid" id="matrix-cards-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- TAB 2: PAIRING CALCULATOR -->
+      <section id="tab-calculator" class="tab-pane">
+        <div class="section-hero">
+          <h2>🎛️ Dynamic Pairing Calculator (Υπολογιστής Αρμονίας Πάσου)</h2>
+          <p>Επιλέξτε υλικό, μαγειρική τεχνική και κυρίαρχη σάλτσα για να υπολογίσετε αυτόματα τις απαιτήσεις οίνου και το ιδανικό seasoning στο πάσο.</p>
+        </div>
+
+        <div class="calculator-layout">
+          <div class="calc-panel-card">
+            <h3 class="panel-card-title">1. Σύνθεση Παραμέτρων Πιάτου</h3>
+            
+            <div class="control-group">
+              <label for="calc-protein">🥩 Κύρια Πρωτεΐνη / Υλικό Βάσης:</label>
+              <select id="calc-protein" class="calc-select">
+                <option value="beef" selected>Βόειο / Μόσχος (Ribeye, Φιλέτο, Picanha)</option>
+                <option value="lamb">Αρνί / Κατσίκι (Υψηλά κορεσμένα λιπίδια)</option>
+                <option value="pork_poultry">Χοιρινό / Κοτόπουλο / Πάπια</option>
+                <option value="fish_white">Λευκό Ψάρι (Λαυράκι, Τσιπούρα, Μπακαλιάρος)</option>
+                <option value="fish_fatty">Λιπαρό Ψάρι (Σολομός, Τόνος, Σκουμπρί)</option>
+                <option value="shellfish">Οστρακοειδή & Μαλάκια (Στρείδια, Χτένια, Καλαμάρι)</option>
+                <option value="pasta_veg">Ζυμαρικά / Ριζότο / Μανιτάρια</option>
+                <option value="cheese_board">Πλατό Τυριών (Μαλακά, Σκληρά, Μπλε)</option>
+                <option value="dessert">Επιδόρπιο / Σοκολάτα / Φρούτα</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="calc-technique">🔥 Τεχνική Μαγειρέματος & Θερμοκρασία:</label>
+              <select id="calc-technique" class="calc-select">
+                <option value="grill_maillard" selected>Σχάρα / Κρούστα Maillard / Κάρβουνα</option>
+                <option value="braised">Σιγομαγειρεμένο / Braised / Στιφάδο</option>
+                <option value="saute_butter">Σοτέ σε Βούτυρο / Beurre Blanc</option>
+                <option value="poached_steam">Ποσέ / Ατμός / Sous-vide Ήπιο</option>
+                <option value="raw">Ωμό / Ceviche / Tartare</option>
+                <option value="smoked">Καπνιστό / Wood Smoked</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="calc-sauce">🍋 Κυρίαρχη Σάλτσα / Αρωματικό Προφίλ:</label>
+              <select id="calc-sauce" class="calc-select">
+                <option value="red_wine_jus" selected>Jus Κόκκινου Κρασιού / Demi-Glace / Τρούφα</option>
+                <option value="citrus_herb">Λεμόνι / Εσπεριδοειδή / Φρέσκα Βότανα</option>
+                <option value="butter_cream">Πλούσια Κρέμα / Beurre Blanc / Παρμεζάνα</option>
+                <option value="tomato_mediterranean">Φρέσκια Ντομάτα / Ελιά / Ρίγανη</option>
+                <option value="soy_umami">Σόγια / Mirin / Shiitake / Teriyaki</option>
+                <option value="chili_spicy">Τσίλι / Κάρυ / Καψαϊκίνη (Πικάντικο)</option>
+                <option value="sweet_honey">Μέλι / Σοκολάτα / Καραμέλα</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-result-card" id="calc-result-container">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: DEGUSTATION MENU FLOW VALIDATOR -->
+      <section id="tab-menu-validator" class="tab-pane">
+        <div class="section-hero">
+          <h2>📋 Degustation Menu Flow Validator</h2>
+          <p>Σχεδιάστε τα στάδια του μενού γευσιγνωσίας (5-8 courses) και ελέγξτε αυτόματα τους Χρυσούς Κανόνες Διαδοχής Οίνων για αποφυγή κόπωσης του ουρανίσκου.</p>
+        </div>
+
+        <div class="validator-layout">
+          <div class="validator-controls">
+            <div class="preset-buttons">
+              <span class="preset-label">Πρότυπα Μενού:</span>
+              <button id="preset-classic" class="btn-preset">🌟 5 Στάδια: Classic Fine Dining</button>
+              <button id="preset-seafood-game" class="btn-preset">🐟🥩 6 Στάδια: Seafood to Game</button>
+              <button id="preset-faulty" class="btn-preset btn-preset-warning">⚠️ Μενού με Λάθη (Conflict Test)</button>
+              <button id="btn-clear-menu" class="btn-preset btn-preset-clear">🗑️ Καθαρισμός</button>
+            </div>
+
+            <div class="add-course-box">
+              <h4 class="sub-heading">Προσθήκη Νέου Σταδίου στο Μενού</h4>
+              <div class="course-inputs-grid">
+                <input type="text" id="course-dish-input" placeholder="Όνομα Πιάτου (π.χ. Μοσχαρίσιο Φιλέτο)..." class="c-input">
+                <input type="text" id="course-wine-input" placeholder="Κρασί (π.χ. Ξινόμαυρο Νάουσας 2018)..." class="c-input">
+                <select id="course-color-select" class="c-input">
+                  <option value="sparkling">Αφρώδης (Champagne/Brut)</option>
+                  <option value="white" selected>Λευκός Οίνος</option>
+                  <option value="rose">Ροζέ Οίνος</option>
+                  <option value="red_light">Ελαφρύ Ερυθρό (Pinot Noir)</option>
+                  <option value="red_full">Στιβαρό Ερυθρό (Cabernet/Ξινόμαυρο)</option>
+                  <option value="sweet">Επιδόρπιος / Γλυκός Οίνος</option>
+                </select>
+                <select id="course-body-select" class="c-input">
+                  <option value="light">Ελαφρύ Σώμα</option>
+                  <option value="medium" selected>Μέτριο Σώμα</option>
+                  <option value="full">Γεμάτο Σώμα</option>
+                </select>
+                <select id="course-sweetness-select" class="c-input">
+                  <option value="dry" selected>Ξηρό (Dry)</option>
+                  <option value="off_dry">Ημίξηρο (Off-Dry)</option>
+                  <option value="sweet">Γλυκό (Sweet)</option>
+                </select>
+                <button id="btn-add-course" class="btn-add-course">➕ Προσθήκη</button>
+              </div>
+            </div>
+
+            <div class="course-timeline" id="course-timeline-list">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <div class="validator-report" id="validator-report-box">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: GREEK INDIGENOUS VARIETIES ATLAS -->
+      <section id="tab-greek-varieties" class="tab-pane">
+        <div class="section-hero">
+          <h2>🇬🇷 Άτλας Ελληνικού Αμπελώνα & Γαστρονομίας</h2>
+          <p>Οι 8 εμβληματικές γηγενείς ποικιλίες της Ελλάδας: οργανοληπτικό προφίλ, οινικοί σύμμαχοι και γαστρονομικοί εχθροί.</p>
+          <div class="filter-pills" id="greek-variety-filters">
+            <button class="pill active" data-vfilter="all">Όλες οι Ποικιλίες (8)</button>
+            <button class="pill" data-vfilter="white">Λευκές Ποικιλίες (5)</button>
+            <button class="pill" data-vfilter="red">Ερυθρές Ποικιλίες (3)</button>
+          </div>
+        </div>
+
+        <div class="varieties-grid" id="varieties-container">
           <!-- Populated dynamically via JS -->
         </div>
       </section>
@@ -147,6 +295,18 @@
               <img src="./images/temperature_guide.png" alt="Temperature Guide" class="infographic-img">
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- TAB: SOMMELIER EXAM QUIZ -->
+      <section id="tab-quiz" class="tab-pane">
+        <div class="section-hero">
+          <h2>🎓 Sommelier Exam Quiz: Αυτοαξιολόγηση Σπουδαστών</h2>
+          <p>10 Επιστημονικές Ερωτήσεις Πιστοποίησης ΣΑΕΚ / ΙΕΚ βασισμένες στο βιβλίο του Οινολόγου Δημητρίου Καρύδα.</p>
+        </div>
+
+        <div class="quiz-container" id="quiz-wrapper">
+          <!-- Populated dynamically via JS -->
         </div>
       </section>
 
@@ -250,6 +410,74 @@
     <footer class="app-footer">
       <p>PassTuner Engine © 2026 | Καρύδας Δημήτριος, Οινολόγος | Σχολή Ανώτερης Επαγγελματικής Κατάρτισης (ΣΑΕΚ / ΙΕΚ)</p>
     </footer>
+  </div>
+
+  <!-- Printable A4 Pass Cheat Sheet (Visible only when printing) -->
+  <div id="printable-cheat-sheet" class="print-sheet-wrapper">
+    <div class="print-sheet-header">
+      <div class="print-header-top">
+        <h2>PASSTUNER CHEF & SOMMELIER QUICK REFERENCE SHEET</h2>
+        <span class="print-badge">ΣΑΕΚ / ΙΕΚ ΟΙΝΟΛΟΓΙΑ & ΜΑΓΕΙΡΙΚΗ</span>
+      </div>
+      <p class="print-author">Επίσημος Οδηγός Πάσου & Αρμονίας | Συγγραφέας: Καρύδας Δημήτριος, Οινολόγος</p>
+    </div>
+
+    <div class="print-sheet-body">
+      <div class="print-section">
+        <h3>⚡ 10 ΧΡΥΣΟΙ ΚΑΝΟΝΕΣ ΑΡΜΟΝΙΑΣ ΣΤΟ ΠΑΣΟ ΤΗΣ ΚΟΥΖΙΝΑΣ</h3>
+        <ol class="print-rules-list">
+          <li><strong>Ποτέ ερυθρά με ωμά στρείδια:</strong> Τα ιόντα Fe²⁺ οξειδώνουν τα ακόρεστα λιπίδια βγάζοντας μεταλλική σκουριά.</li>
+          <li><strong>Το αλάτι σώζει τις τανίνες:</strong> Λίγος ανθός αλατιού μπλοκάρει τους υποδοχείς πικρού και μαλακώνει το κρασί.</li>
+          <li><strong>Ισότιμη οξύτητα:</strong> Το κρασί πρέπει να έχει τουλάχιστον ίση ή ανώτερη οξύτητα από το λεμόνι/ξίδι του πιάτου.</li>
+          <li><strong>Κανόνας επιδορπίου:</strong> Το κρασί πρέπει να είναι πάντα πιο γλυκό από το γλυκό, αλλιώς φαίνεται ξινό και στυφό.</li>
+          <li><strong>Καψαϊκίνη & Αλκοόλ:</strong> Το αλκοόλ >14% διαλύει το τσίλι και πυροδοτεί καύσο στους υποδοχείς TRPV1.</li>
+          <li><strong>Rare vs Well-Done:</strong> Το Rare κρέας διατηρεί σαρκοπλασματικές πρωτεΐνες που δεσμεύουν τις τανίνες.</li>
+          <li><strong>Umami χωρίς αλάτι:</strong> Καταστρέφει το φρούτο. Προσθέστε πάντα αλάτι σε μανιτάρια porcini & ζωμούς.</li>
+          <li><strong>Λιπαρά & Οξύτητα/Τανίνες:</strong> Το λίπος καθαρίζεται από οξύτητα, φυσαλίδες CO₂ ή στυπτικές τανίνες.</li>
+          <li><strong>Διαδοχή ροής:</strong> Λευκά πριν ερυθρά, ξηρά πριν γλυκά, νεαρά πριν παλαιωμένα, ελαφριά πριν γεμάτα.</li>
+          <li><strong>Θερμοκρασίες:</strong> Αφρώδη 6-8°C, Τραγανά λευκά 8-10°C, Βαρελάτα λευκά 11-13°C, Ελαφριά ερυθρά 13-15°C, Στιβαρά 16-18°C.</li>
+        </ol>
+      </div>
+
+      <div class="print-section">
+        <h3>🚨 EMERGENCY PALATE RESCUE PROTOCOLS</h3>
+        <table class="print-rescue-table">
+          <thead>
+            <tr>
+              <th>Σύμπτωμα στο Τραπέζι</th>
+              <th>Βιοχημική Αιτία</th>
+              <th>Άμεση Δράση στο Πάσο</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Στυφό / Πικρό κόκκινο</strong></td>
+              <td>Έλλειψη λίπους ή καθαρό umami</td>
+              <td>Ανθός αλατιού Maldon + glaze βουτύρου/μεδουλίου</td>
+            </tr>
+            <tr>
+              <td><strong>Πλαδαρό / Ξέπλυμα λευκό</strong></td>
+              <td>Υπερβολικό λεμόνι στη σάλτσα</td>
+              <td>Μείωση οξέος στο πιάτο + monter au beurre</td>
+            </tr>
+            <tr>
+              <td><strong>Μεταλλική σκουριά</strong></td>
+              <td>Σίδηρος Fe²⁺ με θαλασσινά</td>
+              <td>Αλλαγή σε Champagne Brut ή Chablis</td>
+            </tr>
+            <tr>
+              <td><strong>Καύσος από τσίλι</strong></td>
+              <td>Καψαϊκίνη με υψηλό αλκοόλ</td>
+              <td>Σερβίρετε γαλακτοκομικό / Off-dry Riesling</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="print-colophon">
+          <p>PassTuner Pairing Engine © 2026 | Καρύδας Δημήτριος, Οινολόγος | github.com/karidasd/passtuner</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script type="module" src="./src/main.js"></script>
