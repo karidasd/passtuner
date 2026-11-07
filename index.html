@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassTuner | The Chef & Sommelier Pairing Engine</title>
+  <meta name="description" content="Η απόλυτη μηχανή Food and Wine Pairing για Executive Chefs και Sommeliers. Βασισμένο στο επίσημο σύγγραμμα του Οινολόγου Δημητρίου Καρύδα.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header Navigation -->
+    <header class="app-header">
+      <div class="header-container">
+        <div class="brand">
+          <span class="brand-icon">🍷</span>
+          <div>
+            <h1 class="brand-title">PassTuner</h1>
+            <p class="brand-subtitle">Chef & Sommelier Pairing Engine</p>
+          </div>
+        </div>
+
+        <nav class="nav-tabs">
+          <button class="nav-btn active" data-tab="pass-matrix">
+            <span class="icon">⚡</span> Pass Matrix
+          </button>
+          <button class="nav-btn" data-tab="emergency">
+            <span class="icon">🚨</span> Emergency Rescue
+          </button>
+          <button class="nav-btn" data-tab="interactions">
+            <span class="icon">🧬</span> 5 Tastes Matrix
+          </button>
+          <button class="nav-btn" data-tab="about">
+            <span class="icon">📖</span> Σχετικά
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+      
+      <!-- TAB 1: PASS MATRIX -->
+      <section id="tab-pass-matrix" class="tab-pane active">
+        <div class="section-hero">
+          <h2>The Master Pass Matrix</h2>
+          <p>Άμεση βαθμονόμηση και διάγνωση συνδυασμών στο πάσο της κουζίνας σε πραγματικό χρόνο.</p>
+          
+          <div class="search-filter-bar">
+            <input type="text" id="search-input" placeholder="🔍 Αναζήτηση πιάτου, υλικού ή κρασιού..." class="search-field">
+            <div class="filter-pills" id="category-filters">
+              <button class="pill active" data-filter="all">Όλα (26)</button>
+              <button class="pill" data-filter="seafood">🐟 Θαλασσινά</button>
+              <button class="pill" data-filter="meat">🥩 Κρεατικά</button>
+              <button class="pill" data-filter="vegetables">🍄 Λαχανικά/Ζυμαρικά</button>
+              <button class="pill" data-filter="cheese">🧀 Τυριά</button>
+              <button class="pill" data-filter="dessert">🍫 Επιδόρπια</button>
+              <button class="pill" data-filter="ethnic">🥢 Ethnic & Kaiseki</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-grid" id="matrix-cards-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- TAB 2: EMERGENCY RESCUE -->
+      <section id="tab-emergency" class="tab-pane">
+        <div class="section-hero alert-hero">
+          <h2>🚨 Emergency Palate Rescue</h2>
+          <p>Πρωτόκολλα άμεσης παρέμβασης όταν ένας συνδυασμός καταρρέει στο τραπέζι κατά το service rush.</p>
+        </div>
+
+        <div class="emergency-list" id="emergency-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- TAB 3: 5 TASTES INTERACTION MATRIX -->
+      <section id="tab-interactions" class="tab-pane">
+        <div class="section-hero">
+          <h2>🧬 The Biochemical 5 Tastes Matrix</h2>
+          <p>Πώς οι βασικές γεύσεις του φαγητού αλλάζουν δραστικά την αντίληψη του κρασιού στη στοματική κοιλότητα.</p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="tastes-table">
+            <thead>
+              <tr>
+                <th>Γεύση στο Φαγητό</th>
+                <th>Τανίνες / Πίκρα</th>
+                <th>Οξύτητα Κρασιού</th>
+                <th>Φρούτο / Γλύκα</th>
+                <th>Αλκοόλ</th>
+                <th>Επιστημονική Ερμηνεία & Στρατηγική Chef</th>
+              </tr>
+            </thead>
+            <tbody id="tastes-table-body">
+              <!-- Populated dynamically via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB 4: ABOUT & AUTHOR -->
+      <section id="tab-about" class="tab-pane">
+        <div class="about-card">
+          <div class="about-header">
+            <span class="badge-tag">ΕΠΙΣΗΜΟ ΕΚΠΑΙΔΕΥΤΙΚΟ ΣΥΓΓΡΑΜΜΑ ΣΑΕΚ / ΙΕΚ</span>
+            <h2>ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ</h2>
+            <h3>Επιστημονικός & Επαγγελματικός Οδηγός Food & Wine Pairing για Chef</h3>
+          </div>
+
+          <div class="author-profile">
+            <div class="author-avatar">🍷</div>
+            <div class="author-info">
+              <h4>Καρύδας Δημήτριος</h4>
+              <p class="author-title">Οινολόγος — Εκπαιδευτής ΣΑΕΚ / ΙΕΚ</p>
+              <p class="author-bio">
+                Επιστημονικός υπεύθυνος και συγγραφέας του ομώνυμου εγκυκλοπαιδικού τόμου 164 σελίδων, 
+                αφιερωμένου στη γεφύρωση της κουζίνας (The Pass) με την κάβα (The Cellar) για σπουδαστές 
+                Μαγειρικής Τέχνης (Chef) και Οινοχόους (Sommeliers).
+              </p>
+            </div>
+          </div>
+
+          <div class="book-features-grid">
+            <div class="feature-box">
+              <span class="f-num">37</span>
+              <span class="f-text">Κεφάλαια σε 12 Μέρη</span>
+            </div>
+            <div class="feature-box">
+              <span class="f-num">27</span>
+              <span class="f-text">Master Chef Συνταγές</span>
+            </div>
+            <div class="feature-box">
+              <span class="f-num">15</span>
+              <span class="f-text">Ρεαλιστικά Σενάρια Πάσου</span>
+            </div>
+            <div class="feature-box">
+              <span class="f-num">100%</span>
+              <span class="f-text">Επιστημονική Αιτιολόγηση</span>
+            </div>
+          </div>
+
+          <div class="github-callout">
+            <h4>🌟 Open Source στο GitHub</h4>
+            <p>Το <strong>PassTuner</strong> είναι ελεύθερο έργο ανοικτού κώδικα για την προαγωγή της ελληνικής και διεθνούς οινογαστρονομίας.</p>
+            <a href="https://github.com/karidasd/passtuner" target="_blank" rel="noopener noreferrer" class="btn-github">
+              Προβολή στο GitHub @karidasd
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>PassTuner Engine © 2026 | Καρύδας Δημήτριος, Οινολόγος | Σχολή Ανώτερης Επαγγελματικής Κατάρτισης (ΣΑΕΚ / ΙΕΚ)</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
