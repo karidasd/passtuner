@@ -4,7 +4,8 @@ import {
   tasteInteractions, 
   greekVarieties, 
   quizQuestions, 
-  calculatorProfiles 
+  calculatorProfiles,
+  thermalAlgorithms 
 } from './data.js';
 
 // Application State
@@ -737,13 +738,175 @@ function renderTastesTable() {
 }
 
 // ==========================================================================
-// 8. INITIAL BOOT
+// 8. CHEF THERMAL ALGORITHMS ENGINE (TEMP, TIME, CARRYOVER & WINE BRIDGE)
+// ==========================================================================
+function setupThermalCalculator() {
+  const proteinSel = document.getElementById('thermal-protein');
+  const donenessSel = document.getElementById('thermal-doneness');
+  const methodSel = document.getElementById('thermal-method');
+  const thicknessInput = document.getElementById('thermal-thickness');
+  const weightInput = document.getElementById('thermal-weight');
+  const thicknessVal = document.getElementById('thermal-thickness-val');
+  const weightVal = document.getElementById('thermal-weight-val');
+  const resultsBox = document.getElementById('thermal-results-box');
+
+  if (!proteinSel || !donenessSel || !methodSel || !resultsBox) return;
+
+  function populateDoneness(resetSliders = false) {
+    const profile = thermalAlgorithms[proteinSel.value];
+    if (!profile) return;
+
+    donenessSel.innerHTML = profile.donenessOptions.map((opt, idx) =>
+      `<option value="${opt.id}" ${idx === 0 ? 'selected' : ''}>${opt.label}</option>`
+    ).join('');
+
+    if (resetSliders) {
+      thicknessInput.value = profile.defaultThickness;
+      weightInput.value = profile.defaultWeight;
+      thicknessVal.textContent = `${profile.defaultThickness} cm`;
+      weightVal.textContent = `${profile.defaultWeight} g`;
+    }
+    computeThermal();
+  }
+
+  function formatMinutes(mins) {
+    if (mins < 3) return `${Math.round(mins * 60)} δευτ. (${mins.toFixed(1)}')`;
+    if (mins < 60) return `${Math.round(mins)} λεπτά`;
+    const h = Math.floor(mins / 60);
+    const m = Math.round(mins % 60);
+    return m > 0 ? `${h} ώρες & ${m} λεπτά` : `${h} ώρες`;
+  }
+
+  function computeThermal() {
+    const profile = thermalAlgorithms[proteinSel.value];
+    const doneness = profile.donenessOptions.find(d => d.id === donenessSel.value) || profile.donenessOptions[0];
+    const method = methodSel.value;
+    const d = parseFloat(thicknessInput.value);
+    const w = parseInt(weightInput.value, 10);
+
+    thicknessVal.textContent = `${d.toFixed(1)} cm`;
+    weightVal.textContent = `${w} g`;
+
+    // 1. Calculate Carryover (+°C) based on weight & cooking method
+    let carryover = 0;
+    if (method === 'sous_vide') {
+      carryover = 0;
+    } else if (method === 'reverse_sear') {
+      carryover = d >= 4.0 ? 2 : 1;
+    } else if (profile.isBraised || (profile.isCephalopod && doneness.id === 'zone_b')) {
+      carryover = 1;
+    } else {
+      // Classic sear / Combi oven: scales with mass & thickness
+      if (w >= 1200) carryover = 7;
+      else if (w >= 600) carryover = 5;
+      else if (d >= 3.5) carryover = 4;
+      else carryover = 3;
+    }
+
+    const targetTemp = doneness.targetTemp;
+    const pullTemp = Math.max(targetTemp - carryover, targetTemp - 8);
+
+    // 2. Calculate Cooking Time using Thickness Squared Law (t ∝ d²) or Baldwin Sous-Vide
+    let estMinutes = 0;
+    let methodNote = "";
+    let alertHtml = "";
+
+    if (profile.isCephalopod && doneness.id === 'zone_a') {
+      estMinutes = 1.5;
+      methodNote = "Ακαριαίο σοκάρισμα στους 220°C (<2 λεπτά — πριν συσπαστεί το κολλαγόνο).";
+    } else if (profile.isCephalopod && doneness.id === 'zone_b') {
+      estMinutes = 55 + Math.round((w - 1000) / 100) * 3;
+      estMinutes = Math.max(45, estMinutes);
+      methodNote = "Σιγοβράσιμο στους 88°C–92°C με κλειστό καπάκι (Ζώνη Β υδρόλυσης κολλαγόνου).";
+    } else if (profile.isBraised) {
+      estMinutes = method === 'sous_vide' ? 14 * 60 : Math.max(150, Math.round(160 + (w / 1000) * 35));
+      methodNote = method === 'sous_vide'
+        ? "Sous-Vide στους 80°C (14h) για υφή που κόβεται με κουτάλι."
+        : "Γάστρα σε φούρνο 140°C (θερμοκρασία υγρού 88°C–92°C, ποτέ 100°C!).";
+    } else if (method === 'sous_vide') {
+      // Baldwin slab heat equilibration: ~12 * d^1.85 minutes, min 35 min
+      estMinutes = Math.max(35, Math.round(11.5 * Math.pow(d, 1.85)));
+      if (proteinSel.value === 'chicken_breast' && estMinutes < 75) estMinutes = 75;
+      methodNote = `Υδατόλουτρο ακριβείας στους ${targetTemp}°C + Post-Sear 40''/πλευρά στους 250°C μετά από στέγνωμα.`;
+    } else if (method === 'reverse_sear') {
+      // Low oven 115°C (~3.0 * d^2) + 2 min sear
+      estMinutes = Math.round(2.8 * d * d) + 2;
+      methodNote = `Φούρνος 115°C σε σχάρα μέχρι ${pullTemp - 2}°C → 5' ανάπαυση → 45''/πλευρά σε καυτό μαντέμι 250°C.`;
+    } else if (method === 'combi_oven') {
+      // Convection + 30% steam cuts time by ~22%
+      estMinutes = Math.max(5, Math.round(profile.baseTimePerCm2 * d * d * 0.85));
+      methodNote = "Combi-Oven 180°C με 30%–40% ατμό (ταχύτερη μεταφορά θερμότητας & λιγότερη απώλεια βάρους).";
+    } else {
+      // Classic Sear (t ∝ d²)
+      estMinutes = Math.max(4, Math.round(profile.baseTimePerCm2 * d * d));
+      methodNote = "Τηγάνι μαντέμι 220°C (γύρισμα κάθε 45'' για ελαχιστοποίηση γκρι ζώνης).";
+      if (d >= 3.5 && !profile.isBraised) {
+        alertHtml = `
+          <div style="background: #FFF5F5; border-left: 4px solid #C53030; padding: 0.7rem 0.9rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.88rem; color: #742A2A;">
+            <strong>⚠️ Ειδοποίηση Αλγορίθμου (d ≥ 3.5 cm):</strong> Με πάχος ${d.toFixed(1)} cm, το Classic Sear δημιουργεί παχιά «γκρι ζώνη»! Συνιστάται αλλαγή σε <strong>Reverse Sear</strong> ή <strong>Sous-Vide</strong>.
+          </div>
+        `;
+      }
+    }
+
+    // 3. Resting time algorithm (1 min per 100g, min 3 min, max 25 min; minimal for sous-vide)
+    let restMinutes = method === 'sous_vide' ? 2 : Math.min(25, Math.max(3, Math.round(w / 100)));
+    if (profile.isCephalopod && doneness.id === 'zone_a') restMinutes = 1;
+
+    resultsBox.innerHTML = `
+      <h3 class="panel-card-title">2. Έξοδος Αλγορίθμου Πάσσου</h3>
+      ${alertHtml}
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.1rem;">
+        <div style="background: #FAF7F2; border: 1.5px solid #C5A059; border-radius: 10px; padding: 0.8rem; text-align: center;">
+          <div style="font-size: 0.74rem; font-weight: 700; color: #6B5B4D; text-transform: uppercase;">Pull Temp (Αφαίρεση)</div>
+          <div style="font-size: 1.65rem; font-weight: 800; color: #722F37; font-family: 'Cinzel', serif;">${pullTemp}°C</div>
+          <div style="font-size: 0.74rem; color: #6B5B4D;">Carryover: +${carryover}°C</div>
+        </div>
+        <div style="background: #4A0F18; border: 1.5px solid #C5A059; border-radius: 10px; padding: 0.8rem; text-align: center;">
+          <div style="font-size: 0.74rem; font-weight: 700; color: #E2C686; text-transform: uppercase;">Target Πυρήνας</div>
+          <div style="font-size: 1.65rem; font-weight: 800; color: #FFFFFF; font-family: 'Cinzel', serif;">${targetTemp}°C</div>
+          <div style="font-size: 0.74rem; color: #E2C686;">Τελική Σερβιρίσματος</div>
+        </div>
+        <div style="background: #FAF7F2; border: 1.5px solid #C5A059; border-radius: 10px; padding: 0.8rem; text-align: center;">
+          <div style="font-size: 0.74rem; font-weight: 700; color: #6B5B4D; text-transform: uppercase;">Χρόνος (t ∝ d²)</div>
+          <div style="font-size: 1.2rem; font-weight: 800; color: #222; margin-top: 0.25rem;">${formatMinutes(estMinutes)}</div>
+          <div style="font-size: 0.74rem; color: #722F37; font-weight: 600;">Ανάπαυση: ${restMinutes} λεπτά</div>
+        </div>
+      </div>
+
+      <div style="background: #F6F2EE; border-radius: 8px; padding: 0.85rem 1rem; margin-bottom: 0.85rem; font-size: 0.9rem;">
+        <strong>🔥 Πρωτόκολλο Εκτέλεσης:</strong> ${methodNote}
+      </div>
+
+      <div style="background: #FDF7EA; border-left: 4px solid #C5A059; border-radius: 6px; padding: 0.8rem 1rem; margin-bottom: 0.85rem; font-size: 0.88rem;">
+        <strong>👨‍🍳 Chef's Thermal Tip:</strong> ${profile.chefTip}
+      </div>
+
+      <div style="background: #4A0F18; color: #FFF; border-radius: 8px; padding: 0.85rem 1rem; font-size: 0.88rem;">
+        <strong style="color: #C5A059;">🍷 Γέφυρα PassTuner (Θερμοκρασία Πυρήνα → Οίνος):</strong><br>
+        ${doneness.wineBridge}
+      </div>
+    `;
+  }
+
+  proteinSel.addEventListener('change', () => populateDoneness(true));
+  donenessSel.addEventListener('change', computeThermal);
+  methodSel.addEventListener('change', computeThermal);
+  thicknessInput.addEventListener('input', computeThermal);
+  weightInput.addEventListener('input', computeThermal);
+
+  populateDoneness(true);
+}
+
+// ==========================================================================
+// 9. INITIAL BOOT
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
   renderMatrixCards();
   renderEmergency();
   renderTastesTable();
   setupCalculator();
+  setupThermalCalculator();
   setupMenuValidator();
   setupGreekVarieties();
   setupQuiz();

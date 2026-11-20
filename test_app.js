@@ -4,7 +4,8 @@ import {
   tasteInteractions, 
   greekVarieties, 
   quizQuestions, 
-  calculatorProfiles 
+  calculatorProfiles,
+  thermalAlgorithms 
 } from './src/data.js';
 
 console.log('Testing PassTuner Comprehensive Data & Engine Logic...');
@@ -82,4 +83,17 @@ const tCount = Object.keys(calculatorProfiles.techniques).length;
 const sCount = Object.keys(calculatorProfiles.sauces).length;
 console.log(`✓ calculatorProfiles loaded with ${pCount} proteins, ${tCount} techniques, and ${sCount} sauces.`);
 
-console.log('\n🌟 ALL 6 PASSTUNER MODULE CHECKS PASSED WITH 100% SUCCESS!');
+// Test 7: Chef Thermal Algorithms Engine
+if (!thermalAlgorithms || Object.keys(thermalAlgorithms).length < 8) {
+  throw new Error('thermalAlgorithms missing required chef cooking profiles');
+}
+const thermalKeys = Object.keys(thermalAlgorithms);
+thermalKeys.forEach(k => {
+  const item = thermalAlgorithms[k];
+  if (!item.name || !Array.isArray(item.donenessOptions) || item.donenessOptions.length === 0 || !item.chefTip) {
+    throw new Error(`Thermal profile ${k} is incomplete`);
+  }
+});
+console.log(`✓ thermalAlgorithms loaded with ${thermalKeys.length} chef thermal profiles (Temp, Time, Carryover & Wine Bridge).`);
+
+console.log('\n🌟 ALL 7 PASSTUNER MODULE CHECKS PASSED WITH 100% SUCCESS!');

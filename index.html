@@ -31,6 +31,9 @@
           <button class="nav-btn" data-tab="calculator">
             <span class="icon">🎛️</span> Υπολογιστής
           </button>
+          <button class="nav-btn" data-tab="thermal">
+            <span class="icon">🌡️</span> Αλγόριθμοι Ψησίματος
+          </button>
           <button class="nav-btn" data-tab="menu-validator">
             <span class="icon">📋</span> Ροή Μενού
           </button>
@@ -300,6 +303,133 @@
         </div>
       </section>
 
+      <!-- TAB: CHEF THERMAL ALGORITHMS (TEMP & TIME ENGINE) -->
+      <section id="tab-thermal" class="tab-pane">
+        <div class="section-hero">
+          <h2>🌡️ Αλγόριθμοι Θερμοκρασίας & Χρόνου Ψησίματος για Chefs</h2>
+          <p>Διαδραστικός υπολογιστής Pull Temp, Carryover Cooking, Νόμου Τετραγώνου του Πάχους (t ∝ d²), 7-Log Παστερίωσης & Sous-Vide — βασισμένος στη Διάλεξη 3 (38 διαφάνειες).</p>
+        </div>
+
+        <div class="calculator-layout">
+          <div class="calc-panel-card">
+            <h3 class="panel-card-title">1. Παράμετροι Πρώτης Ύλης & Μεθόδου</h3>
+
+            <div class="control-group">
+              <label for="thermal-protein">🥩 Είδος Υλικού / Κοπής:</label>
+              <select id="thermal-protein" class="calc-select">
+                <option value="beef_steak" selected>🥩 Μοσχάρι Steak (Ribeye, Φιλέτο, Entrecôte)</option>
+                <option value="lamb_rack">🍖 Αρνίσιο Καρέ (Rack of Lamb)</option>
+                <option value="pork_loin">🥓 Χοιρινό Φιλέτο / Μπριζόλα</option>
+                <option value="chicken_breast">🍗 Στήθος Κοτόπουλου (7-Log Παστερίωση)</option>
+                <option value="salmon">🐟 Σολομός Φιλέτο (Έλεγχος Αλβουμίνης)</option>
+                <option value="white_fish">🐠 Λευκό Ψάρι (Λαυράκι, Τσιπούρα, Σφυρίδα)</option>
+                <option value="beef_cheeks">🍲 Μοσχαρίσια Μάγουλα / Κοκκινιστό (Κολλαγόνο)</option>
+                <option value="octopus">🐙 Χταπόδι / Καλαμάρι (Αλγόριθμος Μαλακίων)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="thermal-doneness">🎯 Επιθυμητός Στόχος / Βαθμός Ψησίματος:</label>
+              <select id="thermal-doneness" class="calc-select">
+                <!-- Populated dynamically via JS -->
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="thermal-method">🔥 Μέθοδος Θερμικής Επεξεργασίας:</label>
+              <select id="thermal-method" class="calc-select">
+                <option value="classic_sear" selected>Τηγάνι / Σχάρα (Classic Sear — 220°C)</option>
+                <option value="reverse_sear">Reverse Sear (Φούρνος 115°C + Μαντέμι 250°C)</option>
+                <option value="combi_oven">Combi-Oven / Φούρνος Αέρα (180°C, 30% ατμός)</option>
+                <option value="sous_vide">Sous-Vide Υδατόλουτρο (Πίνακες Baldwin)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="thermal-thickness">📏 Πάχος Υλικού (Νόμος t ∝ d²): <strong id="thermal-thickness-val">3.5 cm</strong></label>
+              <input type="range" id="thermal-thickness" min="1.5" max="7.0" step="0.5" value="3.5" style="width: 100%; accent-color: #722F37;">
+            </div>
+
+            <div class="control-group">
+              <label for="thermal-weight">⚖️ Βάρος Τεμαχίου (Carryover & Ανάπαυση): <strong id="thermal-weight-val">400 g</strong></label>
+              <input type="range" id="thermal-weight" min="150" max="2500" step="50" value="400" style="width: 100%; accent-color: #722F37;">
+            </div>
+          </div>
+
+          <div class="calc-panel-card" id="thermal-results-box">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+
+        <div class="section-hero" style="margin-top: 2.2rem;">
+          <h3>📊 Επιστημονικά Διαγράμματα Θερμοδυναμικής (Κλικ για μεγέθυνση)</h3>
+          <p>Βασικά οπτικά εργαλεία από τη Διάλεξη 3 — πατήστε σε οποιοδήποτε διάγραμμα για προβολή σε πλήρη οθόνη.</p>
+        </div>
+
+        <div class="infographics-grid">
+          <div class="infographic-card">
+            <div class="info-card-header">
+              <h3>1. Ο Νόμος του Τετραγώνου του Πάχους (t ∝ d²)</h3>
+              <p>Γιατί ένα φιλέτο διπλάσιου πάχους (4 cm vs 2 cm) απαιτεί 4× χρόνο ψησίματος.</p>
+            </div>
+            <div class="info-card-img-wrap">
+              <img src="./images/chart_thickness_law.png" alt="Νόμος Τετραγώνου του Πάχους" class="infographic-img">
+            </div>
+          </div>
+
+          <div class="infographic-card">
+            <div class="info-card-header">
+              <h3>2. Καμπύλη Carryover Cooking (Ribeye 450g)</h3>
+              <p>Αφαίρεση (Pull Temp) στους 51°C → Άνοδος πυρήνα στους 56°C (+5°C) κατά την ανάπαυση.</p>
+            </div>
+            <div class="info-card-img-wrap">
+              <img src="./images/chart_carryover.png" alt="Καμπύλη Carryover Cooking" class="infographic-img">
+            </div>
+          </div>
+
+          <div class="infographic-card">
+            <div class="info-card-header">
+              <h3>3. Καμπύλη 7-Log Παστερίωσης Πουλερικών</h3>
+              <p>Γιατί 65°C × 5.2 λεπτά είναι εξίσου ασφαλή με 74°C στιγμιαία — με 3× περισσότερους χυμούς.</p>
+            </div>
+            <div class="info-card-img-wrap">
+              <img src="./images/chart_pasteurization.png" alt="7-Log Παστερίωση Πουλερικών" class="infographic-img">
+            </div>
+          </div>
+
+          <div class="infographic-card">
+            <div class="info-card-header">
+              <h3>4. Χάρτης Κρίσιμων Θερμικών Οροσήμων (50°C–170°C)</h3>
+              <p>Μυοσίνη, Αλβουμίνη, Ακτίνη, Κολλαγόνο, Πηκτίνη, Φράγμα 100°C, Maillard & Καραμελοποίηση.</p>
+            </div>
+            <div class="info-card-img-wrap">
+              <img src="./images/chart_thermal_milestones.png" alt="Χάρτης Θερμικών Οροσήμων" class="infographic-img">
+            </div>
+          </div>
+        </div>
+
+        <div class="downloads-card" style="margin-top: 2rem;">
+          <h4 class="downloads-title">📥 Λήψη Πλήρους Μαθήματος: Διάλεξη 3 (38 Διαφάνειες)</h4>
+          <p class="downloads-subtitle">Κατεβάστε την πλήρη παρουσίαση «Αλγόριθμοι Θερμοκρασίας & Χρόνου Ψησίματος για Chefs» με όλα τα παραδείγματα πάσσου:</p>
+          <div class="download-links-grid">
+            <a href="./docs/PRESENTATION_3_CHEF_COOKING_ALGORITHMS_TEMP_AND_TIME.pdf" target="_blank" download class="dl-btn dl-primary">
+              <span class="dl-icon">📄</span>
+              <div class="dl-info">
+                <strong>Διάλεξη 3: Αλγόριθμοι Ψησίματος (PDF)</strong>
+                <span>38 Widescreen Slides • Παραδείγματα & Διαγράμματα • PDF (1.45 MB)</span>
+              </div>
+            </a>
+            <a href="./docs/PRESENTATION_3_CHEF_COOKING_ALGORITHMS_TEMP_AND_TIME.pptx" target="_blank" download class="dl-btn">
+              <span class="dl-icon">📊</span>
+              <div class="dl-info">
+                <strong>Διάλεξη 3: PowerPoint Παρουσίαση (PPTX)</strong>
+                <span>Επεξεργάσιμο αρχείο διδασκαλίας • PPTX (726 KB)</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- TAB: SOMMELIER EXAM QUIZ -->
       <section id="tab-quiz" class="tab-pane">
         <div class="section-hero">
@@ -360,8 +490,8 @@
           </div>
 
           <div class="downloads-card">
-            <h4 class="downloads-title">📚 Λήψη Βιβλίου & Παρουσιάσεων (PDF)</h4>
-            <p class="downloads-subtitle">Άμεση πρόσβαση στο πλήρες εγκεκριμένο εκπαιδευτικό υλικό του μαθήματος:</p>
+            <h4 class="downloads-title">📚 Λήψη Βιβλίου & Παρουσιάσεων (PDF & PowerPoint)</h4>
+            <p class="downloads-subtitle">Άμεση πρόσβαση στο πλήρες εκπαιδευτικό υλικό των μαθημάτων ΣΑΕΚ / ΙΕΚ:</p>
             <div class="download-links-grid">
               <a href="./docs/BOOK_FOOD_AND_WINE_PAIRING_MASTER_EDITION.pdf" target="_blank" download class="dl-btn dl-primary">
                 <span class="dl-icon">📕</span>
@@ -373,15 +503,43 @@
               <a href="./docs/PRESENTATION_1_FOOD_AND_WINE_PAIRING_THEORY_AND_INGREDIENTS.pdf" target="_blank" download class="dl-btn">
                 <span class="dl-icon">🖥️</span>
                 <div class="dl-info">
-                  <strong>Διάλεξη 1: Θεωρία & Υλικά</strong>
-                  <span>60 Widescreen Slides • PDF (1.0 MB)</span>
+                  <strong>Διάλεξη 1: Θεωρία & Υλικά (PDF)</strong>
+                  <span>60 Widescreen Slides • PDF (1.04 MB)</span>
+                </div>
+              </a>
+              <a href="./docs/PRESENTATION_1_FOOD_AND_WINE_PAIRING_THEORY_AND_INGREDIENTS.pptx" target="_blank" download class="dl-btn">
+                <span class="dl-icon">📊</span>
+                <div class="dl-info">
+                  <strong>Διάλεξη 1: PowerPoint (PPTX)</strong>
+                  <span>60 Slides • Επεξεργάσιμο PPTX (173 KB)</span>
                 </div>
               </a>
               <a href="./docs/PRESENTATION_2_FOOD_AND_WINE_PAIRING_ADVANCED_PRACTICE_AND_WORLD_CUISINES.pdf" target="_blank" download class="dl-btn">
                 <span class="dl-icon">🌍</span>
                 <div class="dl-info">
-                  <strong>Διάλεξη 2: Πράξη & Διεθνείς Κουζίνες</strong>
-                  <span>60 Widescreen Slides • PDF (0.99 MB)</span>
+                  <strong>Διάλεξη 2: Πράξη & Διεθνείς Κουζίνες (PDF)</strong>
+                  <span>60 Widescreen Slides • PDF (1.03 MB)</span>
+                </div>
+              </a>
+              <a href="./docs/PRESENTATION_2_FOOD_AND_WINE_PAIRING_ADVANCED_PRACTICE_AND_WORLD_CUISINES.pptx" target="_blank" download class="dl-btn">
+                <span class="dl-icon">📊</span>
+                <div class="dl-info">
+                  <strong>Διάλεξη 2: PowerPoint (PPTX)</strong>
+                  <span>60 Slides • Επεξεργάσιμο PPTX (172 KB)</span>
+                </div>
+              </a>
+              <a href="./docs/PRESENTATION_3_CHEF_COOKING_ALGORITHMS_TEMP_AND_TIME.pdf" target="_blank" download class="dl-btn dl-primary">
+                <span class="dl-icon">🌡️</span>
+                <div class="dl-info">
+                  <strong>ΝΕΟ! Διάλεξη 3: Αλγόριθμοι Ψησίματος (PDF)</strong>
+                  <span>38 Slides • Θερμοκρασία, Χρόνος & Παραδείγματα • PDF (1.45 MB)</span>
+                </div>
+              </a>
+              <a href="./docs/PRESENTATION_3_CHEF_COOKING_ALGORITHMS_TEMP_AND_TIME.pptx" target="_blank" download class="dl-btn">
+                <span class="dl-icon">🔥</span>
+                <div class="dl-info">
+                  <strong>ΝΕΟ! Διάλεξη 3: PowerPoint (PPTX)</strong>
+                  <span>38 Slides • Επεξεργάσιμο PPTX (726 KB)</span>
                 </div>
               </a>
             </div>

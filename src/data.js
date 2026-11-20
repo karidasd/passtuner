@@ -1378,3 +1378,99 @@ export const calculatorProfiles = {
     sweet_honey: { name: "Μέλι / Σοκολάτα / Καραμέλα", tanninMod: 1, acidMod: 2, bodyMod: 4, tip: "Vinsanto Σαντορίνης, Samos Grand Cru ή Port." }
   }
 };
+
+// --- CHEF THERMAL ALGORITHMS ENGINE (PRESENTATION 3) ---
+export const thermalAlgorithms = {
+  beef_steak: {
+    name: "🥩 Μοσχάρι Steak (Ribeye, Φιλέτο, Entrecôte)",
+    baseTimePerCm2: 1.5, // 2cm -> 6 min, 4cm -> 24 min (t ∝ d²)
+    defaultThickness: 3.5,
+    defaultWeight: 400,
+    donenessOptions: [
+      { id: "blue", label: "Blue / Bleu (47°C)", targetTemp: 47, wineBridge: "Μέγιστες ελεύθερες πρωτεΐνες → εξημερώνουν τα πιο τανικά ερυθρά (Νεαρό Ξινόμαυρο Νάουσας, Barolo, Cabernet Sauvignon)." },
+      { id: "rare", label: "Rare / Ελαφρά (52°C)", targetTemp: 52, wineBridge: "Άθικτες σαρκοπλασματικές πρωτεΐνες → ιδανικό για Ξινόμαυρο, Cabernet Sauvignon ή Syrah με δομημένες τανίνες." },
+      { id: "med_rare", label: "Medium-Rare — Ιδανικό (56°C)", targetTemp: 56, wineBridge: "Χρυσή ισορροπία λιωμένου λίπους & πρωτεϊνών → Ξινόμαυρο, Cabernet, Αγιωργίτικο παλαίωσης ή Sangiovese." },
+      { id: "medium", label: "Medium / Μέτριο (61°C)", targetTemp: 61, wineBridge: "Λιγότερη υγρασία → προτιμήστε πιο μαλακές, στρογγυλεμένες τανίνες (Αγιωργίτικο Νεμέας, Merlot, Rioja Reserva)." },
+      { id: "well_done", label: "Well-Done / Καλοψημένο (72°C)", targetTemp: 72, wineBridge: "ΠΡΟΣΟΧΗ: Πλήρης μετουσίωση πρωτεϊνών! Αποφύγετε σκληρές τανίνες — σερβίρετε με πλούσια σάλτσα jus & Pinot Noir ή βελούδινο Αγιωργίτικο." }
+    ],
+    chefTip: "Στεγνώστε την επιφάνεια σχολαστικά (εξάλειψη φράγματος 100°C) και γυρίζετε κάθε 45'' για ελαχιστοποίηση της γκρι ζώνης."
+  },
+  lamb_rack: {
+    name: "🍖 Αρνίσιο Καρέ (Rack of Lamb)",
+    baseTimePerCm2: 1.4,
+    defaultThickness: 3.5,
+    defaultWeight: 600,
+    donenessOptions: [
+      { id: "med_rare", label: "Medium-Rare — Fine Dining (55°C)", targetTemp: 55, wineBridge: "Υψηλά κορεσμένα λιπίδια + ροζ πρωτεΐνη → Ξινόμαυρο Νάουσας ή Βόρειος Ροδανός Syrah." },
+      { id: "medium", label: "Medium / Κλασικό (60°C)", targetTemp: 60, wineBridge: "Πλούσια γεύση & βότανα → Αγιωργίτικο Νεμέας, Μαυροτράγανο ή Cabernet Sauvignon." }
+    ],
+    chefTip: "Θωρακίστε 2' από την πλευρά του λίπους για να λιώσει το στεατικό λίπος πριν μπει στον φούρνο (190°C)."
+  },
+  pork_loin: {
+    name: "🥓 Χοιρινό Φιλέτο / Μπριζόλα",
+    baseTimePerCm2: 1.6,
+    defaultThickness: 3.0,
+    defaultWeight: 350,
+    donenessOptions: [
+      { id: "usda_juicy", label: "Ζουμερό USDA — Νέος Κανόνας (63°C)", targetTemp: 63, wineBridge: "Ζουμερή λευκή πρωτεΐνη → Βαρελάτο Chardonnay, Βιδιανό Κρήτης ή κομψό Pinot Noir." },
+      { id: "classic", label: "Καλοψημένο (68°C)", targetTemp: 68, wineBridge: "Πιο σφιχτή υφή → Αγιωργίτικο, Ροζέ Ξινόμαυρο ή Riesling (με σάλτσα μουστάρδας)." }
+    ],
+    chefTip: "Άλμη 5% αλάτι για 2 ώρες πριν το ψήσιμο αυξάνει την κατακράτηση υγρασίας κατά +15%. Ποτέ πάνω από 68°C!"
+  },
+  chicken_breast: {
+    name: "🍗 Στήθος Κοτόπουλου (7-Log Παστερίωση)",
+    baseTimePerCm2: 1.7,
+    defaultThickness: 3.0,
+    defaultWeight: 220,
+    donenessOptions: [
+      { id: "pasteur_65", label: "7-Log Ζουμερό (65°C × 5.2' hold)", targetTemp: 65, wineBridge: "Εξαιρετικά ζουμερό & τρυφερό → Βιδιανό Κρήτης sur lie, Chardonnay Βουργουνδίας ή Pinot Noir." },
+      { id: "instant_74", label: "Κλασικό Στιγμιαίο (74°C)", targetTemp: 74, wineBridge: "Πιο ξηρή υφή → απαιτεί κρεμώδη σάλτσα (π.χ. μορχέλες/λεμόνι) με πλούσιο Chardonnay ή Ασύρτικο βαρέλι." }
+    ],
+    chefTip: "Στους 65°C για 5.2 λεπτά πετυχαίνουμε 99.99999% (7-log) εξόντωση Σαλμονέλας με 3× περισσότερη υγρασία από τα 74°C!"
+  },
+  salmon: {
+    name: "🐟 Σολομός Φιλέτο (Έλεγχος Αλβουμίνης)",
+    baseTimePerCm2: 1.1,
+    defaultThickness: 2.5,
+    defaultWeight: 200,
+    donenessOptions: [
+      { id: "silky_50", label: "Βουτυρένιος — Μηδέν Αλβουμίνη (50°C)", targetTemp: 50, wineBridge: "Λιπαρό ωμέγα-3 ψάρι → Pinot Noir, Ροζέ Ξινόμαυρο ή Βαρελάτο Chardonnay." },
+      { id: "firm_57", label: "Σφιχτός / Καλοψημένος (57°C)", targetTemp: 57, wineBridge: "Υψηλή οξύτητα για καθαρισμό λίπους → Ασύρτικο Σαντορίνης, Ρομπόλα ή Champagne Brut." }
+    ],
+    chefTip: "Άλμη 10% αλάτι για 10' πριν το ψήσιμο + μέτρια φωτιά (170°C) + Pull Temp αυστηρά 48°C = μηδέν λευκή αλβουμίνη!"
+  },
+  white_fish: {
+    name: "🐠 Λευκό Ψάρι (Λαυράκι, Τσιπούρα, Σφυρίδα)",
+    baseTimePerCm2: 1.2,
+    defaultThickness: 2.2,
+    defaultWeight: 180,
+    donenessOptions: [
+      { id: "fine_55", label: "Fine Dining Κρυστάλλινες Νιφάδες (55°C)", targetTemp: 55, wineBridge: "Μηδενικές τανίνες (κίνδυνος Fe²⁺)! → Ασύρτικο Σαντορίνης, Ρομπόλα Κεφαλληνίας ή Sauvignon Blanc." },
+      { id: "classic_60", label: "Κλασικό Ψητό (60°C)", targetTemp: 60, wineBridge: "Καθαρή θαλασσινή υφή → Σαββατιανό, Βιδιανό ή Chablis." }
+    ],
+    chefTip: "Ψήστε κατά 80% του χρόνου από την πλευρά του δέρματος (190°C) και μόνο 30–45'' από τη σάρκα με αφρίζον βούτυρο."
+  },
+  beef_cheeks: {
+    name: "🍲 Μοσχαρίσια Μάγουλα / Κοκκινιστό (Κολλαγόνο)",
+    baseTimePerCm2: 12.0,
+    defaultThickness: 4.5,
+    defaultWeight: 1000,
+    isBraised: true,
+    donenessOptions: [
+      { id: "braised_93", label: "Υδρόλυση Κολλαγόνου → Ζελατίνη (93°C)", targetTemp: 93, wineBridge: "Πλούσια ζελατίνη & βαθύ jus → Παλαιωμένο Ξινόμαυρο, Nebbiolo (Barolo), Syrah ή Μαυροτράγανο." }
+    ],
+    chefTip: "ΠΟΤΕ βίαιος βρασμός 100°C! Κρατήστε το υγρό στους 88°C–92°C (φούρνος 140°C με καπάκι) μέχρι η ακίδα να μπαίνει σαν σε βούτυρο."
+  },
+  octopus: {
+    name: "🐙 Χταπόδι / Καλαμάρι (Αλγόριθμος Μαλακίων)",
+    baseTimePerCm2: 5.5,
+    defaultThickness: 3.0,
+    defaultWeight: 1200,
+    isCephalopod: true,
+    donenessOptions: [
+      { id: "zone_a", label: "Ζώνη Α: Ακαριαίο Σοκάρισμα (< 2 λεπτά, 220°C)", targetTemp: 58, wineBridge: "Τραγανό & θαλασσινό → Ασύρτικο Σαντορίνης, Μοσχοφίλερο ή Ρομπόλα." },
+      { id: "zone_b", label: "Ζώνη Β: Σιγομαγείρεμα Κολλαγόνου (90°C, 55–65')", targetTemp: 90, wineBridge: "Καραμελωμένο στα κάρβουνα με ξίδι/λάδι → Παλαιωμένο Ασύρτικο, Βιδιανό ή ελαφρύ Ροζέ Ξινόμαυρο." }
+    ],
+    chefTip: "ΑΠΟΦΥΓΕΤΕ τη «Νεκρή Ζώνη» (4 έως 35 λεπτά) όπου τα μαλάκια γίνονται λάστιχο! Ή <2 λεπτά ή >45 λεπτά!"
+  }
+};

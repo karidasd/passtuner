@@ -12,25 +12,27 @@
 <p align="center">
   <a href="https://karidasd.github.io/passtuner"><img src="https://img.shields.io/badge/🚀%20Live%20App-GitHub%20Pages-success.svg?style=for-the-badge" alt="Live App"></a>
   <a href="public/docs/BOOK_FOOD_AND_WINE_PAIRING_MASTER_EDITION.pdf"><img src="https://img.shields.io/badge/📖%20Βιβλίο-PDF%20164%20Σελίδες-800020.svg?style=for-the-badge" alt="Book PDF"></a>
-  <a href="public/docs/PRESENTATION_1_FOOD_AND_WINE_PAIRING_THEORY_AND_INGREDIENTS.pdf"><img src="https://img.shields.io/badge/🖥️%20Διάλεξη%201-60%20Slides%20PDF-C5A059.svg?style=for-the-badge" alt="Presentation 1"></a>
-  <a href="public/docs/PRESENTATION_2_FOOD_AND_WINE_PAIRING_ADVANCED_PRACTICE_AND_WORLD_CUISINES.pdf"><img src="https://img.shields.io/badge/🌍%20Διάλεξη%202-60%20Slides%20PDF-C5A059.svg?style=for-the-badge" alt="Presentation 2"></a>
+  <a href="public/docs/PRESENTATION_1_FOOD_AND_WINE_PAIRING_THEORY_AND_INGREDIENTS.pdf"><img src="https://img.shields.io/badge/🖥️%20Διάλεξη%201-60%20Slides-C5A059.svg?style=for-the-badge" alt="Presentation 1"></a>
+  <a href="public/docs/PRESENTATION_2_FOOD_AND_WINE_PAIRING_ADVANCED_PRACTICE_AND_WORLD_CUISINES.pdf"><img src="https://img.shields.io/badge/🌍%20Διάλεξη%202-60%20Slides-C5A059.svg?style=for-the-badge" alt="Presentation 2"></a>
+  <a href="public/docs/PRESENTATION_3_CHEF_COOKING_ALGORITHMS_TEMP_AND_TIME.pdf"><img src="https://img.shields.io/badge/🌡️%20Διάλεξη%203-38%20Slides%20Αλγόριθμοι-722F37.svg?style=for-the-badge" alt="Presentation 3"></a>
 </p>
 
 ---
 
-**PassTuner** είναι μια ολοκληρωμένη διαδικτυακή πλατφόρμα Food & Wine Pairing σχεδιασμένη ειδικά για τον επαγγελματία Executive Chef, Sommelier και σπουδαστή Μαγειρικής Τέχνης ΣΑΕΚ / ΙΕΚ κατά τη διάρκεια του service στο πάσο (The Pass).
+**PassTuner** είναι μια ολοκληρωμένη διαδικτυακή πλατφόρμα Food & Wine Pairing και Θερμικής Επιστήμης Κουζίνας, σχεδιασμένη ειδικά για τον επαγγελματία Executive Chef, Sommelier και σπουδαστή Μαγειρικής Τέχνης ΣΑΕΚ / ΙΕΚ κατά τη διάρκεια του service στο πάσο (The Pass).
 
-Βασίζεται στον ομώνυμο εγκυκλοπαιδικό τόμο 164 σελίδων **«ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ»** του Οινολόγου Δημητρίου Καρύδα και παρέχει επιστημονικά τεκμηριωμένη διάγνωση συγκρούσεων, υπολογισμό αναγκών οίνου και βαθμονόμηση του πιάτου σε πραγματικό χρόνο.
+Βασίζεται στον ομώνυμο εγκυκλοπαιδικό τόμο 164 σελίδων **«ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ»** του Οινολόγου Δημητρίου Καρύδα και παρέχει επιστημονικά τεκμηριωμένη διάγνωση συγκρούσεων, υπολογισμό αναγκών οίνου, θερμικούς αλγορίθμους ψησίματος και βαθμονόμηση του πιάτου σε πραγματικό χρόνο.
 
 ---
 
 ## 📚 Το Βιβλίο & Ακαδημαϊκό Υλικό (Direct Download Links)
 
-| Εκπαιδευτικό Υλικό | Μορφή & Μέγεθος | Περιγραφή | Σύνδεσμος Λήψης |
+| Εκπαιδευτικό Υλικό | Μορφή & Μέγεθος | Περιγραφή | Σύνδεσμοι Λήψης |
 | :--- | :--- | :--- | :--- |
-| **ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ** *(Master Edition)* | 📕 PDF (164 Σελίδες, 5.98 MB) | Το εγχειρίδιο του μαθήματος: 37 κεφάλαια, 27 gourmet συνταγές, 15 σενάρια πάσου και βιοχημεία. | [📥 Άμεση Λήψη Βιβλίου (PDF)](public/docs/BOOK_FOOD_AND_WINE_PAIRING_MASTER_EDITION.pdf) |
-| **Διάλεξη 1: Θεωρία & Βασικά Υλικά** | 🖥️ PDF (60 Slides Widescreen, 1.0 MB) | Αρχές γευσιγνωσίας, βιοχημεία 5 γεύσεων, θερμοκρασίες, σάλτσες, τυριά και θαλασσινά. | [📥 Λήψη Παρουσίασης 1 (PDF)](public/docs/PRESENTATION_1_FOOD_AND_WINE_PAIRING_THEORY_AND_INGREDIENTS.pdf) |
-| **Διάλεξη 2: Προχωρημένη Πράξη & Διεθνείς Κουζίνες** | 🌍 PDF (60 Slides Widescreen, 0.99 MB) | Κυνήγι, Dry-Aging, Ethnic (Ιαπωνία, Ταϊλάνδη, Μεξικό), Degustation σχεδιασμός & Pass Management. | [📥 Λήψη Παρουσίασης 2 (PDF)](public/docs/PRESENTATION_2_FOOD_AND_WINE_PAIRING_ADVANCED_PRACTICE_AND_WORLD_CUISINES.pdf) |
+| **ΑΡΜΟΝΙΑ ΣΤΟ ΠΙΑΤΟ ΚΑΙ ΣΤΟ ΠΟΤΗΡΙ** *(Master Edition)* | 📕 PDF (164 Σελίδες, 5.98 MB) | Το εγχειρίδιο του μαθήματος: 37 κεφάλαια, 27 gourmet συνταγές, 15 σενάρια πάσου και βιοχημεία. | [📥 Βιβλίο (PDF)](public/docs/BOOK_FOOD_AND_WINE_PAIRING_MASTER_EDITION.pdf) |
+| **Διάλεξη 1: Θεωρία & Βασικά Υλικά** | 🖥️ PDF (1.04 MB) & PPTX (173 KB) | 60 Slides: Αρχές γευσιγνωσίας, βιοχημεία 5 γεύσεων, θερμοκρασίες, σάλτσες, τυριά και θαλασσινά. | [📥 PDF](public/docs/PRESENTATION_1_FOOD_AND_WINE_PAIRING_THEORY_AND_INGREDIENTS.pdf) • [📊 PPTX](public/docs/PRESENTATION_1_FOOD_AND_WINE_PAIRING_THEORY_AND_INGREDIENTS.pptx) |
+| **Διάλεξη 2: Προχωρημένη Πράξη & Διεθνείς Κουζίνες** | 🌍 PDF (1.03 MB) & PPTX (172 KB) | 60 Slides: Κυνήγι, Dry-Aging, Ethnic (Ιαπωνία, Ταϊλάνδη, Μεξικό), Degustation σχεδιασμός & Pass Management. | [📥 PDF](public/docs/PRESENTATION_2_FOOD_AND_WINE_PAIRING_ADVANCED_PRACTICE_AND_WORLD_CUISINES.pdf) • [📊 PPTX](public/docs/PRESENTATION_2_FOOD_AND_WINE_PAIRING_ADVANCED_PRACTICE_AND_WORLD_CUISINES.pptx) |
+| **ΝΕΟ! Διάλεξη 3: Αλγόριθμοι Θερμοκρασίας & Χρόνου Ψησίματος για Chefs** | 🌡️ PDF (1.45 MB) & PPTX (726 KB) | 38 Slides + 4 Διαγράμματα: Νόμος t ∝ d², Carryover Cooking, Reverse Sear, 7-Log Παστερίωση, Sous-Vide Baldwin, Combi ΔΤ & Πρακτικά Παραδείγματα Πάσσου. | [📥 PDF](public/docs/PRESENTATION_3_CHEF_COOKING_ALGORITHMS_TEMP_AND_TIME.pdf) • [📊 PPTX](public/docs/PRESENTATION_3_CHEF_COOKING_ALGORITHMS_TEMP_AND_TIME.pptx) |
 
 ---
 
@@ -82,6 +84,12 @@
 
 ### 9. 🖨️ Εκτυπώσιμος Οδηγός Πάσου A4 (Printable Quick Sheet)
 * Με ένα κλικ στο κουμπί **«🖨️ Εκτύπωση Pass Sheet»**, μορφοποιείται αυτόματα μέσω ειδικού print stylesheet ένας συμπυκνωμένος οδηγός 1 σελίδας A4 για πλαστικοποίηση και τοποθέτηση στον τοίχο της κουζίνας.
+
+### 10. 🌡️ Αλγόριθμοι Θερμοκρασίας & Χρόνου Ψησίματος (Chef Thermal Engine — ΝΕΟ!)
+* Διαδραστικός υπολογιστής για 8 βασικές κατηγορίες πρώτων υλών (Μοσχάρι Steak, Αρνίσιο Καρέ, Χοιρινό, Στήθος Κοτόπουλου 7-Log, Σολομός, Λευκό Ψάρι, Μοσχαρίσια Μάγουλα, Μαλάκια).
+* Υπολογίζει σε πραγματικό χρόνο **Pull Temp (°C)**, **Carryover (+°C)**, **Target Core Temp (°C)**, **Χρόνο Ψησίματος (Νόμος t ∝ d² & Πίνακες Baldwin Sous-Vide)** και **Χρόνο Ανάπαυσης**.
+* **Γέφυρα PassTuner:** Συνδέει άμεσα τη θερμοκρασία πυρήνα με το ιδανικό κρασί (π.χ. Rare 52°C → Ξινόμαυρο/Cabernet vs Well-Done 72°C → Αγιωργίτικο/Pinot Noir + σάλτσα).
+* Περιλαμβάνει τα 4 επιστημονικά διαγράμματα της Διάλεξης 3 με Lightbox zoom και άμεση λήψη των slides (PDF & PPTX).
 
 ---
 
